@@ -78,7 +78,7 @@ public static class CampaignBuilder {
     }
     static void Enemy(Transform parent,CombatSession session,float x,StreetEnemyKind kind,int mission){
         var go=new GameObject(kind==StreetEnemyKind.Torreta?"Torreta de seguridad":kind==StreetEnemyKind.Dron?"Dron de vigilancia":"Robot patrullero");go.transform.SetParent(parent);go.transform.position=new Vector3(x,kind==StreetEnemyKind.Dron?.2f:mission==2 && x==11?.55f:mission==2 && x==83?.975f:-.15f,0);
-        var visual=go.AddComponent<SpriteRenderer>();visual.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(Root+"/Art/MisionEnemigo"+(kind==StreetEnemyKind.Torreta?2:(int)kind)+".png");visual.sharedMaterial=material;visual.sortingOrder=10;
+        var visual=go.AddComponent<SpriteRenderer>();visual.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(Root+"/Art/"+(kind==StreetEnemyKind.Fusilero?"RobotFusileroNaranja":"MisionEnemigo"+(kind==StreetEnemyKind.Torreta?2:(int)kind))+".png");visual.sharedMaterial=material;visual.sortingOrder=10;
         if(kind==StreetEnemyKind.Torreta){visual.transform.localScale=new Vector3(1.15f,.9f,1);}
         var box=go.AddComponent<BoxCollider2D>();box.size=new Vector2(1,1.7f);var h=go.AddComponent<CombatHealth>();h.maximum=kind==StreetEnemyKind.Torreta?160:kind==StreetEnemyKind.Dron?70:90;h.team=CombatTeam.Robot;h.visual=visual;
         var e=go.AddComponent<StreetEnemy>();e.kind=kind;e.health=h;e.target=session.health;e.visual=visual;e.pixel=pixel;e.material=material;e.origin=go.transform.position;e.warning=Rect(go.transform,"Aviso",0,1.15f,.15f,.25f,"FFDB83",15);e.warning.enabled=false;

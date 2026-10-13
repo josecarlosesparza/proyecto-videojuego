@@ -27,7 +27,7 @@ public static class StreetMissionBuilder {
     static void R(int x,int y,int w,int h,string hex){for(int yy=y;yy<y+h;yy++)for(int xx=x;xx<x+w;xx++)tex.SetPixel(xx,tex.height-1-yy,C(hex));}
     static void Texture(int w,int h){tex=new Texture2D(w,h,TextureFormat.RGBA32,false);tex.SetPixels(new Color[w*h]);}
     static Sprite Save(string name,int ppu=24){tex.Apply();string p=Root+"/Art/"+name+".png";File.WriteAllBytes(p,tex.EncodeToPNG());UnityEngine.Object.DestroyImmediate(tex);AssetDatabase.ImportAsset(p,ImportAssetOptions.ForceSynchronousImport);var i=(TextureImporter)AssetImporter.GetAtPath(p);i.textureType=TextureImporterType.Sprite;i.spritePixelsPerUnit=ppu;i.filterMode=FilterMode.Point;i.textureCompression=TextureImporterCompression.Uncompressed;i.mipmapEnabled=false;i.alphaIsTransparency=true;i.SaveAndReimport();return AssetDatabase.LoadAssetAtPath<Sprite>(p);}
-    static Sprite EnemyArt(int type){Texture(40,44);
+    static Sprite EnemyArt(int type){if(type==0)return AssetDatabase.LoadAssetAtPath<Sprite>(Root+"/Art/RobotFusileroNaranja.png");Texture(40,44);
         if(type==1){R(2,13,36,5,"182E40");R(4,10,10,3,"ABC9CE");R(26,10,10,3,"ABC9CE");R(9,17,22,16,"243750");R(12,16,16,14,"9272B5");R(15,19,10,6,"D8C6ED");R(18,20,5,4,"FF966C");R(16,30,8,7,"34465D");R(17,36,6,3,"F3B25F");}
         else {string armor=type==2?"B89255":"4B9091";R(11,3,18,13,"172A38");R(13,5,14,8,armor);R(15,8,12,3,"FF936B");R(7,17,26,17,"182C3C");R(10,18,20,13,armor);R(15,20,10,5,"BCD6D1");R(9,32,8,10,"263C4D");R(24,32,8,10,"263C4D");R(7,39,12,4,"91A7AF");R(23,39,12,4,"91A7AF");R(1,22,12,6,"243341");R(0,24,9,2,"B8D5D2");if(type==2){R(5,15,8,18,"D0A964");R(28,15,8,18,"D0A964");R(16,27,8,3,"503E32");}}
         return Save("MisionEnemigo"+type);

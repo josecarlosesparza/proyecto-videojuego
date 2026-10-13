@@ -52,6 +52,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\BCLExtensions\TargetingPacks\netstandard2.1\analyzers\dotnet\roslyn4.0\cs\System.Text.Json.SourceGeneration.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NexoAvance\Scripts\DaylightLevelCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatHealth.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MachineBoss.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CampaignExit.cs" />
@@ -61,6 +62,9 @@
     <Compile Include="Assets\NexoAvance\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatSmokeTest.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\ReferenceMissionCheck.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\DaylightParallax.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\ReferenceBackdrop.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\GrenadeInventory.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\OctopusBoss.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MainMenuSmokeTest.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="Assets\NexoAvance\Scripts\SmallCarFire.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MainMenuController.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\AvanceView.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\BackdropSeam.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\StreetEnemy.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\GrenadeCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\RobotShooter.cs" />
@@ -82,6 +87,9 @@
     <Compile Include="Assets\NexoAvance\Scripts\ResistancePlayer.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatBullet.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\WreckCheck.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\NexoAvance\Art\Mision1Referencia\BackdropBlend.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

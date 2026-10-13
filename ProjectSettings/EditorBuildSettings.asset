@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NexoAvance/Scenes/NucleoNexo.unity
     guid: 4a74c693f366baf4aade42cd7936b9ac
+  - enabled: 1
+    path: Assets/NexoAvance/Scenes/CallesBajoControl_Dia.unity
+    guid: 35f900b9a92867244b695b8e5e72c6cb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

@@ -52,9 +52,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\BCLExtensions\TargetingPacks\netstandard2.1\analyzers\dotnet\roslyn4.0\cs\System.Text.Json.SourceGeneration.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NexoAvance\Editor\ReferenceMissionBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\BuildAvance.cs" />
     <Compile Include="Assets\NexoAvance\Editor\WreckSceneBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\MainMenuBuilder.cs" />
+    <Compile Include="Assets\NexoAvance\Editor\RobotSpriteValidation.cs" />
+    <Compile Include="Assets\NexoAvance\Editor\DaylightLevelBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\StreetMissionBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\CombatBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\CampaignBuilder.cs" />
