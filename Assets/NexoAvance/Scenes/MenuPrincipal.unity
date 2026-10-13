@@ -7263,7 +7263,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "MOVIMIENTO \xB7 SALTO \xB7 COMBATE"
+  m_Text: "TRES ENEMIGOS \xB7 PUNTOS DE CONTROL \xB7 JEFE"
 --- !u!222 &246813197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18513,7 +18513,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PROTOTIPO  /  03
+  m_Text: "MISI\xD3N 01 / 3\u20135 MIN"
 --- !u!222 &584047086
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50171,7 +50171,7 @@ MonoBehaviour:
   volumeValue: {fileID: 1314150371}
   loadMessage: {fileID: 679261834}
   uiAudio: {fileID: 1693401465}
-  gameScene: PrimerAvance
+  gameScene: CallesBajoControl
 --- !u!114 &1693401467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54600,9 +54600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Enfrenta al centinela y esquiva sus disparos.
-
-    Utiliza las plataformas y la cobertura.'
+  m_Text: "MISI\xD3N 01 \xB7 CALLES BAJO CONTROL\nLibera la avenida y derrota a KRAKEN-01."
 --- !u!222 &1855198732
 CanvasRenderer:
   m_ObjectHideFlags: 0

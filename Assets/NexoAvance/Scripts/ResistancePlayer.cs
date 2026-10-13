@@ -78,6 +78,7 @@ public class ResistancePlayer : MonoBehaviour {
         v.y = Mathf.Max(v.y, -18f);
         body.linearVelocity = v;
     }
+    public void SetSpawn(Vector3 point) { spawn=point; }
     public void Respawn() { transform.position = spawn; body.position = spawn; body.linearVelocity = Vector2.zero; jumpBuffer = coyoteTime = 0; GetComponent<PlayerCombat>()?.ResetEncounter(); }
     public void SetPaused(bool value) { Paused = value; Time.timeScale = value ? 0 : 1; jumpBuffer = 0; }
     void OnApplicationFocus(bool focus) { if (!focus && !TestMode) SetPaused(true); }

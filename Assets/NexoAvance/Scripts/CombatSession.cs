@@ -24,7 +24,7 @@ public class CombatSession : MonoBehaviour {
     }
     void Start() { UpdateHealth(); defeatPanel.SetActive(false); }
     void Update() {
-        objective.text = enemy.health.Alive ? "OBJETIVO: NEUTRALIZA AL ROBOT" : "ROBOT ELIMINADO · AVANZA HASTA LA BANDERA";
+        if(enemy && objective) objective.text = enemy.health.Alive ? "OBJETIVO: NEUTRALIZA AL ROBOT" : "ROBOT ELIMINADO · AVANZA HASTA LA BANDERA";
         if(!Dead) return;
         bool restart = false;
 #if ENABLE_INPUT_SYSTEM
@@ -59,7 +59,9 @@ public class CombatSession : MonoBehaviour {
     // Se llama desde Respawn para cubrir R, la pausa y las caídas fuera del nivel.
     public void ResetCombat() {
         player.enabled = true; player.GetComponent<Rigidbody2D>().simulated = true;
-        player.SetPaused(false); health.ResetHealth(); enemy.ResetEnemy();
+        player.SetPaused(false); health.ResetHealth(); if(enemy) enemy.ResetEnemy();
+        var mission=GetComponent<StreetMission>(); if(mission) mission.ResetCheckpoint();
+        var campaign=GetComponent<CampaignMission>(); if(campaign) campaign.ResetCheckpoint();
         CombatBullet.ClearAll(); defeatPanel.SetActive(false); UpdateHealth();
     }
     public void BackToMenu() {

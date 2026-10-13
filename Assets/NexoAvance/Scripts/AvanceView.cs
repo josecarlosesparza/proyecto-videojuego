@@ -4,12 +4,13 @@ namespace NexoAvance {
 public class AvanceView : MonoBehaviour {
     public ResistancePlayer player;
     public Camera worldCamera;
+    public float cameraEnd = 29;
     float cameraVelocity;
     bool confirmMenu, leaving;
     public bool ConfirmingMenu => confirmMenu;
     GUIStyle title, small, button;
     void LateUpdate() {
-        float x = Mathf.Clamp(player.transform.position.x + 3, 8, 29);
+        float x = Mathf.Clamp(player.transform.position.x + 3, 8, cameraEnd);
         var p = worldCamera.transform.position;
         p.x = Mathf.SmoothDamp(p.x, x, ref cameraVelocity, .18f);
         worldCamera.transform.position = p;
@@ -41,7 +42,7 @@ public class AvanceView : MonoBehaviour {
         }
         GUI.Label(new Rect(365,164,300,40), "EN PAUSA", title);
         if (GUI.Button(new Rect(335,223,290,42), "Continuar", button)) player.SetPaused(false);
-        if (GUI.Button(new Rect(335,277,290,42), "Reiniciar recorrido", button)) { player.Respawn(); player.SetPaused(false); }
+        if (GUI.Button(new Rect(275,277,410,42), "Reintentar desde el punto de control", button)) { player.Respawn(); player.SetPaused(false); }
         if (GUI.Button(new Rect(335,331,290,42), "Volver al menú principal", button)) RequestMenu();
     }
     static GUIStyle Style(int size, Color color, FontStyle weight = FontStyle.Normal) {

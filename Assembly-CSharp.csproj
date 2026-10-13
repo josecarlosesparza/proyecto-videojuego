@@ -53,16 +53,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\NexoAvance\Scripts\CombatHealth.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\MachineBoss.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignExit.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\EnemyExplosion.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\StreetMission.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatSession.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\PlayerCombat.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\MissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatSmokeTest.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\GrenadeInventory.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\OctopusBoss.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MainMenuSmokeTest.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\AvanceSmokeTest.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignCheck.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignMission.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\ThrownGrenade.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\SmallCarFire.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MainMenuController.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\AvanceView.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\StreetEnemy.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\GrenadeCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\RobotShooter.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\ContinuousMissionCheck.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\AssemblyBelt.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignWorld.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignPickup.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\CampaignObjective.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ResistancePlayer.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatBullet.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\WreckCheck.cs" />

@@ -9,7 +9,13 @@ EditorBuildSettings:
     path: Assets/NexoAvance/Scenes/MenuPrincipal.unity
     guid: efee098b8067dec43857f945d44c644f
   - enabled: 1
-    path: Assets/NexoAvance/Scenes/PrimerAvance.unity
-    guid: eec65a8248377af4e9a7196dd6b85357
+    path: Assets/NexoAvance/Scenes/CallesBajoControl.unity
+    guid: c06097b9ebae1b641a63cbc2f0c12793
+  - enabled: 1
+    path: Assets/NexoAvance/Scenes/FabricaAutomatizada.unity
+    guid: 2d9c09a8e03d199468e05735642c1a9b
+  - enabled: 1
+    path: Assets/NexoAvance/Scenes/NucleoNexo.unity
+    guid: 4a74c693f366baf4aade42cd7936b9ac
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
