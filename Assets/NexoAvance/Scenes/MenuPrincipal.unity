@@ -22154,7 +22154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5163676775561223323, guid: 9b9a3d2c593c8724d9fa3480878c616f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -50172,6 +50172,7 @@ MonoBehaviour:
   loadMessage: {fileID: 679261834}
   uiAudio: {fileID: 1693401465}
   gameScene: CallesBajoControl
+  characterSelection: {fileID: 0}
 --- !u!114 &1693401467
 MonoBehaviour:
   m_ObjectHideFlags: 0

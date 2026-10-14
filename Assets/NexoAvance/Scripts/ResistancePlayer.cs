@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -27,6 +27,7 @@ public class ResistancePlayer : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<BoxCollider2D>();
         spawn = transform.position;
+        var appearance=GetComponent<HeroAppearance>();if(!appearance)appearance=gameObject.AddComponent<HeroAppearance>();appearance.Initialize(this);
     }
     void Update() {
         bool pressJump = false, pause = false, reset = false;

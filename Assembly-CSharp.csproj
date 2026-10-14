@@ -56,6 +56,7 @@
     <Compile Include="Assets\NexoAvance\Scripts\CombatHealth.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MachineBoss.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CampaignExit.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\HeroRoster.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\EnemyExplosion.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\StreetMission.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatSession.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="Assets\NexoAvance\Scripts\CombatSmokeTest.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ReferenceMissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\DaylightParallax.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\HeroSelectionScreen.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\HeroAppearance.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ReferenceBackdrop.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\GrenadeInventory.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\OctopusBoss.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Assets\NexoAvance\Scripts\ContinuousMissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\AssemblyBelt.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CampaignWorld.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\HeroCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CampaignPickup.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CampaignObjective.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ResistancePlayer.cs" />

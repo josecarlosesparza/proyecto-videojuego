@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -39,11 +39,25 @@ public class PlayerCombat : MonoBehaviour {
         if(HasMachineGun){remaining=2;nextBurst=Time.time+.08f;}
         return true;
     }
-    void Emit(){float direction=movement.visual.flipX?-1:1;CombatBullet.Fire(GetComponent<Rigidbody2D>().position+new Vector2(0,-.12f),direction,CombatTeam.Player,HasMachineGun?18:damage,HasMachineGun?23:bulletSpeed,pixel,material);}
+    public Vector2 LastShotOrigin {get;private set;}
+    void Emit(){
+        float direction=movement.visual.flipX?-1:1;
+        var appearance=GetComponent<HeroAppearance>();
+        Vector2 origin=appearance?appearance.Muzzle:GetComponent<Rigidbody2D>().position+new Vector2(0,-.12f);
+        // Do not spawn beyond a wall when the drawn barrel extends outside the shared hitbox.
+        Vector2 from=new Vector2(transform.position.x,origin.y);
+        foreach(var hit in Physics2D.RaycastAll(from,Vector2.right*direction,Mathf.Abs(origin.x-from.x))){
+            if(hit.collider.isTrigger || hit.collider.GetComponentInParent<ResistancePlayer>() || hit.collider.GetComponent<ThrownGrenade>())continue;
+            origin=hit.point-Vector2.right*direction*.01f;break;
+        }
+        LastShotOrigin=origin;
+        CombatBullet.Fire(origin,direction,CombatTeam.Player,HasMachineGun?18:damage,HasMachineGun?23:bulletSpeed,pixel,material);
+        if(appearance)appearance.Fired();
+    }
     public void SetMachineGun(bool value){
         HasMachineGun=value;remaining=0;nextShot=0;
-        if(value && !gunVisual){var sr=new GameObject("Metralleta del jugador").AddComponent<SpriteRenderer>();gunVisual=sr.transform;gunVisual.SetParent(transform,false);gunVisual.localScale=new Vector3(.6f,.14f,1);sr.sprite=pixel;sr.sharedMaterial=material;sr.sortingOrder=12;sr.color=new Color(.9f,.7f,.3f);}
-        if(gunVisual)gunVisual.gameObject.SetActive(value);
+        if(value && !gunVisual && !GetComponent<HeroAppearance>()){var sr=new GameObject("Metralleta del jugador").AddComponent<SpriteRenderer>();gunVisual=sr.transform;gunVisual.SetParent(transform,false);gunVisual.localScale=new Vector3(.6f,.14f,1);sr.sprite=pixel;sr.sharedMaterial=material;sr.sortingOrder=12;sr.color=new Color(.9f,.7f,.3f);}
+        if(gunVisual)gunVisual.gameObject.SetActive(value && !GetComponent<HeroAppearance>());
     }
     public void ResetEncounter(){nextShot=0;remaining=0;TestFire=false;if(session)session.ResetCombat();}
 }

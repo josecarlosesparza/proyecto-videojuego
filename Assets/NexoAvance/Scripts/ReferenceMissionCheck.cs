@@ -14,7 +14,7 @@ public class ReferenceMissionCheck:MonoBehaviour {
     void Place(ResistancePlayer player,float x){var body=player.GetComponent<Rigidbody2D>();body.position=new Vector2(x,-.15f);player.transform.position=body.position;body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();}
     IEnumerator Start(){
         File.WriteAllText(Out+"validacion.txt","");Application.runInBackground=true;yield return null;
-        var menu=FindAnyObjectByType<MainMenuController>();Check(menu && menu.gameScene=="CallesBajoControl","Jugar apunta a la misión 1 modificada");menu.Play();while(SceneManager.GetActiveScene().name!="CallesBajoControl")yield return null;yield return null;
+        var menu=FindAnyObjectByType<MainMenuController>();Check(menu && menu.gameScene=="CallesBajoControl","Jugar apunta a la misión 1 modificada");menu.Play();menu.characterSelection.confirm.onClick.Invoke();while(SceneManager.GetActiveScene().name!="CallesBajoControl")yield return null;yield return null;
         var mission=FindAnyObjectByType<StreetMission>();var player=mission.session.player;player.TestMode=true;player.SetPaused(false);mission.boss.AutoFire=false;mission.boss.GetComponent<Collider2D>().enabled=false;
         var enemies=FindObjectsByType<StreetEnemy>(FindObjectsInactive.Include,FindObjectsSortMode.None);foreach(var e in enemies){e.AutoFire=false;e.GetComponent<Collider2D>().enabled=false;}
         var backdrop=FindAnyObjectByType<ReferenceBackdrop>();Check(backdrop && backdrop.panels.Length==6,"Seis panoramas cubren toda la misión");

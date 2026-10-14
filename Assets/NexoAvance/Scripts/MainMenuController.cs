@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -21,6 +21,7 @@ namespace NexoAvance
         public string gameScene = "PrimerAvance";
         public bool IsLoading { get; private set; }
         public string CurrentPage { get; private set; } = "Inicio";
+        public HeroSelectionScreen characterSelection;
         AudioClip click;
         GameObject returnSelection;
         bool applying;
@@ -46,6 +47,7 @@ namespace NexoAvance
             defaultsButton.onClick.AddListener(RestoreDefaults);
             volume.onValueChanged.AddListener(ChangeVolume);
             fullscreen.onValueChanged.AddListener(ChangeFullscreen);
+            var chooser=new GameObject("Selección de protagonista");chooser.transform.SetParent(home.transform.parent,false);characterSelection=chooser.AddComponent<HeroSelectionScreen>();characterSelection.Build(this);
             ApplySavedOptions();
             SetPage("Inicio");
         }
@@ -82,6 +84,7 @@ namespace NexoAvance
         void SetPage(string page)
         {
             CurrentPage = page;
+            if(characterSelection)characterSelection.gameObject.SetActive(page == "Personajes");
             home.SetActive(page == "Inicio"); controls.SetActive(page == "Controles");
             options.SetActive(page == "Opciones"); credits.SetActive(page == "Créditos");
             exitConfirm.SetActive(page == "Salir"); loading.SetActive(page == "Cargando");
@@ -90,6 +93,7 @@ namespace NexoAvance
         {
             switch (CurrentPage)
             {
+                case "Personajes": return characterSelection.cards[characterSelection.Current];
                 case "Controles": return controlsBack;
                 case "Opciones": return volume;
                 case "Créditos": return creditsBack;
@@ -99,7 +103,8 @@ namespace NexoAvance
         }
         static void Select(GameObject item) { if (EventSystem.current) EventSystem.current.SetSelectedGameObject(item); }
 
-        public void Play() { if (!IsLoading) StartCoroutine(LoadGame()); }
+        public void Play() { if(IsLoading)return;Sound();SetPage("Personajes");characterSelection.Open(); }
+        public void StartSelectedGame(){if(!IsLoading)StartCoroutine(LoadGame());}
         IEnumerator LoadGame()
         {
             if (!Application.CanStreamedLevelBeLoaded(gameScene))

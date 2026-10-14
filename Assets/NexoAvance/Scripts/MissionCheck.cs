@@ -13,7 +13,7 @@ public class MissionCheck : MonoBehaviour {
     void Kill(GameObject wave){foreach(var e in wave.GetComponentsInChildren<StreetEnemy>(true)){bool hit=e.health.Hit(10000,CombatTeam.Player);File.AppendAllText(Path.Combine(output,"diagnostico.txt"),wave.name+" / "+e.name+" hit="+hit+" hp="+e.health.Current+" time="+Time.time+" scale="+Time.timeScale+"\n");}}
     IEnumerator Start(){
         output=@"C:\Users\jose\Documents\Codex\2026-09-22\ho\outputs\Mision01";File.WriteAllText(Path.Combine(output,"validacion.txt"),"");Application.runInBackground=true;
-        yield return null;var menu=FindAnyObjectByType<MainMenuController>();Check(menu && menu.gameScene=="CallesBajoControl","Jugar abre la misión nueva");menu.playButton.onClick.Invoke();
+        yield return null;var menu=FindAnyObjectByType<MainMenuController>();Check(menu && menu.gameScene=="CallesBajoControl","Jugar abre la misión nueva");menu.playButton.onClick.Invoke();menu.characterSelection.confirm.onClick.Invoke();
         while(SceneManager.GetActiveScene().name!="CallesBajoControl")yield return null;yield return null;
         var m=FindAnyObjectByType<StreetMission>();var s=m.session;var p=s.player;var gun=p.GetComponent<PlayerCombat>();p.TestMode=true;p.SetPaused(false);
         var all=FindObjectsByType<StreetEnemy>(FindObjectsInactive.Include,FindObjectsSortMode.None);int[] kinds=new int[3];foreach(var e in all){kinds[(int)e.kind]++;e.AutoFire=false;}m.boss.AutoFire=false;

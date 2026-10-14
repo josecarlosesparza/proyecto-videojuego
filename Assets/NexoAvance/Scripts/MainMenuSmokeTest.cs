@@ -42,13 +42,13 @@ public class MainMenuSmokeTest : MonoBehaviour {
         menu.exitButton.onClick.Invoke(); Check(menu.exitConfirm.activeSelf,"Salir solicita confirmación");
         Capture("menu-salir.png"); menu.cancelExit.onClick.Invoke();
         Check(menu.CurrentPage=="Inicio" && !menu.exitConfirm.activeSelf,"Cancelar salida vuelve al inicio");
-        menu.playButton.onClick.Invoke(); menu.playButton.onClick.Invoke();
+        menu.playButton.onClick.Invoke(); menu.characterSelection.confirm.onClick.Invoke(); menu.characterSelection.confirm.onClick.Invoke();
         Check(menu.IsLoading,"Jugar bloquea las pulsaciones repetidas durante la carga");
         float deadline=Time.realtimeSinceStartup+20;
-        while(SceneManager.GetActiveScene().name!="PrimerAvance" && Time.realtimeSinceStartup<deadline) yield return null;
+        while(SceneManager.GetActiveScene().name!="CallesBajoControl" && Time.realtimeSinceStartup<deadline) yield return null;
         yield return null;
         var player=FindFirstObjectByType<ResistancePlayer>();
-        Check(player && FindObjectsByType<ResistancePlayer>(FindObjectsSortMode.None).Length==1,"Jugar carga un único personaje en PrimerAvance");
+        Check(player && FindObjectsByType<ResistancePlayer>(FindObjectsSortMode.None).Length==1,"Jugar carga un único personaje en CallesBajoControl");
         if(player) {
             player.TestMode=true; player.SetPaused(false);
             yield return new WaitForSeconds(.5f);

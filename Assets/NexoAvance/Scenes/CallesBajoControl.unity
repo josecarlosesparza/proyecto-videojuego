@@ -15463,7 +15463,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5163676775561223323, guid: 9b9a3d2c593c8724d9fa3480878c616f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15483,7 +15483,7 @@ Transform:
   m_GameObject: {fileID: 1054921946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17702,6 +17702,7 @@ GameObject:
   - component: {fileID: 1214139248}
   - component: {fileID: 1214139252}
   - component: {fileID: 1214139253}
+  - component: {fileID: 1214139254}
   m_Layer: 2
   m_Name: "Jugador \xB7 Resistencia"
   m_TagString: Untagged
@@ -17728,16 +17729,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   idle:
-  - {fileID: -5163676775561223323, guid: 9b9a3d2c593c8724d9fa3480878c616f, type: 3}
-  - {fileID: -3781910019033479378, guid: be14e3eb573eeb0458fff558bf65ff38, type: 3}
+  - {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
   run:
-  - {fileID: 4975264246010571757, guid: ad0ca93bd7387194daf576184ce7018b, type: 3}
-  - {fileID: -7930355650201923474, guid: 28311ffc255884743a3f4c668a85511a, type: 3}
-  - {fileID: -1071083020363879801, guid: 3560f20d3d108e54b87563a5c42d8000, type: 3}
-  - {fileID: 7474028193545773561, guid: bcfb5721954412f4e8c40e2eee5d686d, type: 3}
-  - {fileID: 5375739553775314487, guid: 11cb69d61b0e4714cac510c6d1142f01, type: 3}
-  - {fileID: -6390118874295128208, guid: 6463afee96c6d114e9d37b68ea664d57, type: 3}
-  jump: {fileID: 7460046300004610927, guid: 4e45ac97d97ec984286817dba7400baf, type: 3}
+  - {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
+  jump: {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
   visual: {fileID: 1054921947}
 --- !u!4 &1214139249
 Transform:
@@ -17864,6 +17859,19 @@ MonoBehaviour:
   damage: 10
   shotInterval: 0.25
   bulletSpeed: 18
+--- !u!114 &1214139254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214139247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20782ebb59297148871fc9c18249826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.HeroAppearance
+  roster: {fileID: 11400000, guid: 5ea3b1e5c4e62484c95616695e1c4b90, type: 2}
 --- !u!1 &1215210335
 GameObject:
   m_ObjectHideFlags: 0
