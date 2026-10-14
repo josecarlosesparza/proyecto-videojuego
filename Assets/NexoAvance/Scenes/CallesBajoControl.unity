@@ -255,6 +255,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 27, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &5952290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,6 +1925,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 64, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &103996895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5405,6 +5413,114 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &327603952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327603954}
+  - component: {fileID: 327603953}
+  m_Layer: 0
+  m_Name: "ENCUENTROS \xB7 refuerzos por avance"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &327603953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327603952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf29c0ab7d092bb44acadd2fd622ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.EncounterDirector
+  session: {fileID: 1865745279}
+  templates:
+  - {fileID: 8419769712026149160, guid: 7d28c621e1a45154b96d1455d563d4bc, type: 3}
+  - {fileID: 2201713543563714895, guid: 5bc364faf99befe4cb45bea3806100b8, type: 3}
+  - {fileID: 7250481717629647042, guid: 1fb1424ba9789e747b5421ac1b0d1b9e, type: 3}
+  encounters:
+  - label: Encuentro 1
+    triggerX: 4
+    count: 3
+    interval: 0.85
+    initialDelay: 0.6
+    allowRear: 0
+    composition: 000000000000000001000000i
+  - label: Refuerzo intenso 2
+    triggerX: 26
+    count: 4
+    interval: 0.85
+    initialDelay: 0.6
+    allowRear: 1
+    composition: 000000000100000002000000i
+  - label: "Reagrupaci\xF3n 3"
+    triggerX: 51
+    count: 5
+    interval: 0.85
+    initialDelay: 2.5
+    allowRear: 0
+    composition: 000000000100000002000000i
+  - label: Encuentro 4
+    triggerX: 76
+    count: 6
+    interval: 0.85
+    initialDelay: 0.6
+    allowRear: 0
+    composition: 000000000100000002000000i
+  - label: Refuerzo intenso 5
+    triggerX: 103
+    count: 4
+    interval: 0.85
+    initialDelay: 0.6
+    allowRear: 1
+    composition: 000000000100000002000000i
+  - label: "Reagrupaci\xF3n 6"
+    triggerX: 130
+    count: 7
+    interval: 0.85
+    initialDelay: 2.5
+    allowRear: 0
+    composition: 000000000100000002000000i
+  - label: Encuentro 7
+    triggerX: 151
+    count: 6
+    interval: 0.85
+    initialDelay: 0.6
+    allowRear: 1
+    composition: 000000000100000002000000i
+  maxActive: 9
+  cameraMargin: 1.8
+  safePlayerDistance: 8
+  routeLeft: -1
+  routeRight: 199
+  normalSpeed: 2.8
+  heavySpeed: 2.2
+  droneSpeed: 3.2
+  firingDistance: 4.5
+--- !u!4 &327603954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327603952}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328946709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,6 +5749,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 96, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &353749918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8981,6 +9101,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 19, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &657407254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9435,6 +9559,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 148, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &668290775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9706,6 +9834,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 141, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &701077576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10373,6 +10505,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 147, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &757552075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10770,6 +10906,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 102, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &766569156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14912,6 +15052,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 65, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1029389605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15183,6 +15327,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 26, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1049393985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16108,6 +16256,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 109, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1095839880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17150,6 +17302,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 72, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1177937051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19684,6 +19840,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 33, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1277398590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19863,6 +20023,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 20, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1278266105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20706,6 +20870,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 57, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1308347793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24690,6 +24858,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 110, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1555227554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25673,6 +25845,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 58, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1584046289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26360,6 +26536,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 134, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1624729558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27310,6 +27490,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 71, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1680000637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28055,6 +28239,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 95, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1769400703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28234,6 +28422,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 103, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1770986214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28505,6 +28697,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 140, y: 0.2, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1797544686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29861,6 +30057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.StreetMission
   session: {fileID: 1865745279}
+  encounters: {fileID: 327603953}
   sectors:
   - trigger: 10
     checkpoint: 40
@@ -30523,6 +30720,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 34, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1874117626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30951,6 +31152,10 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d31ee56be89271e49977b3a67d7f6692, type: 2}
   AutoFire: 1
   origin: {x: 133, y: -0.15, z: 0}
+  attackInterval: 2.3
+  warningTime: 0.65
+  attackRange: 12
+  damage: 10
 --- !u!114 &1903566499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33058,3 +33263,4 @@ SceneRoots:
   - {fileID: 1865745280}
   - {fileID: 1518568301}
   - {fileID: 1430654761}
+  - {fileID: 327603954}

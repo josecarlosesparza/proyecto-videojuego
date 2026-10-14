@@ -63,12 +63,16 @@
     <Compile Include="Assets\NexoAvance\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\CombatSmokeTest.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\EncounterRoutes.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\EncounterDirector.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ReferenceMissionCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\DaylightParallax.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\HeroSelectionScreen.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\HeroAppearance.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\EncounterCheck.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\ReferenceBackdrop.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\GrenadeInventory.cs" />
+    <Compile Include="Assets\NexoAvance\Scripts\EnemyPursuit.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\OctopusBoss.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\MainMenuSmokeTest.cs" />
     <Compile Include="Assets\NexoAvance\Scripts\AvanceSmokeTest.cs" />

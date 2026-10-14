@@ -1,44 +1,37 @@
 using UnityEngine;
 namespace NexoAvance {
 public enum StreetEnemyKind { Fusilero, Dron, Blindado, Torreta }
-public class StreetEnemy : MonoBehaviour {
-    public StreetEnemyKind kind;
-    public CombatHealth health, target;
-    public SpriteRenderer visual, warning;
-    public Sprite pixel;
-    public Material material;
-    public bool AutoFire=true;
-    public Vector3 origin;
-    float nextAttack, readyAt, burstAt;
-    int burst;
-    bool charging;
-    Collider2D hitbox;
-    void Awake(){origin=transform.position;hitbox=GetComponent<Collider2D>();health.Died+=Die;}
+public class StreetEnemy:MonoBehaviour {
+    public StreetEnemyKind kind;public CombatHealth health,target;public SpriteRenderer visual,warning;public Sprite pixel;public Material material;
+    public bool AutoFire=true;public Vector3 origin;
+    [Header("Ataque")][Min(.2f)]public float attackInterval=2.3f;
+    [Min(.2f)]public float warningTime=.65f;
+    [Min(1)]public float attackRange=12;
+    [Min(1)]public int damage=10;
+    float nextAttack,readyAt,burstAt;int burst;bool charging;Collider2D hitbox;EnemyPursuit pursuit;
+    void Awake(){origin=transform.position;hitbox=GetComponent<Collider2D>();pursuit=GetComponent<EnemyPursuit>();health.Died+=Die;}
     void OnEnable(){nextAttack=Time.time+1.2f;charging=false;burst=0;}
     void Update(){
-        if(!health.Alive || !target.Alive || Time.timeScale==0)return;
-        float dx=target.transform.position.x-transform.position.x;
-        visual.flipX=dx<0;
-        if(kind==StreetEnemyKind.Dron)transform.position=origin+new Vector3(Mathf.Sin(Time.time*1.1f)*.65f,Mathf.Sin(Time.time*2)*.2f,0);
-        bool visible=AutoFire && Mathf.Abs(dx)<12 && Visible();
+        if(!health.Alive||!target||!target.Alive||Time.timeScale==0||(pursuit&&pursuit.director&&pursuit.director.Stopped)){warning.enabled=false;charging=false;burst=0;return;}
+        float dx=target.transform.position.x-transform.position.x;if(Mathf.Abs(dx)>.3f)visual.flipX=dx<0;
+        float range=pursuit&&pursuit.melee?1.45f:attackRange;
+        bool visible=AutoFire&&Mathf.Abs(dx)<range&&HasSight();
         if(!visible){charging=false;warning.enabled=false;burst=0;return;}
-        if(burst>0 && Time.time>=burstAt){Shoot();burst--;burstAt=Time.time+.24f;}
-        if(!charging && burst==0 && Time.time>=nextAttack){charging=true;readyAt=Time.time+((kind==StreetEnemyKind.Blindado || kind==StreetEnemyKind.Torreta)?.9f:.65f);}
+        if(burst>0&&Time.time>=burstAt){Shoot();burst--;burstAt=Time.time+.24f;}
+        if(!charging&&burst==0&&Time.time>=nextAttack){charging=true;readyAt=Time.time+warningTime;}
         warning.enabled=charging;
-        if(charging && Time.time>=readyAt){charging=false;warning.enabled=false;Shoot();if((kind==StreetEnemyKind.Blindado || kind==StreetEnemyKind.Torreta)){burst=2;burstAt=Time.time+.24f;}nextAttack=Time.time+(kind==StreetEnemyKind.Dron?2.8f:2.3f);}
+        if(charging&&Time.time>=readyAt){charging=false;warning.enabled=false;Shoot();if((kind==StreetEnemyKind.Blindado||kind==StreetEnemyKind.Torreta)&&!(pursuit&&pursuit.melee)){burst=2;burstAt=Time.time+.24f;}nextAttack=Time.time+attackInterval;}
     }
-    bool Visible(){
-        Vector2 a=(Vector2)transform.position+Vector2.down*.12f;
-        Vector2 b=(Vector2)target.transform.position+Vector2.down*.12f;
-        foreach(var h in Physics2D.RaycastAll(a,(b-a).normalized,(b-a).magnitude,~0)){
-            var entity=h.collider.GetComponentInParent<CombatHealth>();if(entity==health || (entity && entity.team==CombatTeam.Robot))continue;
-            return entity==target;
+    public bool HasSight(){
+        if(!target)return false;Vector2 a=(Vector2)transform.position+Vector2.down*.12f,b=(Vector2)target.transform.position+Vector2.down*.12f;
+        foreach(var h in Physics2D.RaycastAll(a,(b-a).normalized,(b-a).magnitude+.05f,~0)){
+            if(h.collider.isTrigger||h.collider.GetComponentInParent<StreetEnemy>()||h.collider.GetComponent<ThrownGrenade>())continue;
+            return h.collider.GetComponentInParent<CombatHealth>()==target;
         }return false;
     }
-    void Shoot(){
-        Vector2 from=(Vector2)transform.position+Vector2.down*.12f;
-        Vector2 aim=kind==StreetEnemyKind.Dron ? ((Vector2)target.transform.position+Vector2.down*.12f-from).normalized : Vector2.right*Mathf.Sign(target.transform.position.x-from.x);
-        CombatBullet.Fire(from,aim,CombatTeam.Robot,kind==StreetEnemyKind.Fusilero?10:8,kind==StreetEnemyKind.Dron?5:7,pixel,material);
+    void Shoot(){if(!HasSight())return;if(pursuit&&pursuit.melee){if(Vector2.Distance(transform.position,target.transform.position)<1.5f)target.Hit(damage,CombatTeam.Robot);return;}
+        Vector2 from=(Vector2)transform.position+Vector2.down*.12f;Vector2 aim=((Vector2)target.transform.position+Vector2.down*.12f-from).normalized;
+        CombatBullet.Fire(from,aim,CombatTeam.Robot,damage,kind==StreetEnemyKind.Dron?5:7,pixel,material);
     }
     void Die(){EnemyExplosion.Spawn(transform.position,pixel,material);visual.enabled=false;warning.enabled=false;hitbox.enabled=false;charging=false;burst=0;}
     public void ResetEnemy(){if(!hitbox)hitbox=GetComponent<Collider2D>();transform.position=origin;health.ResetHealth();visual.enabled=true;hitbox.enabled=true;warning.enabled=false;nextAttack=Time.time+1.2f;charging=false;burst=0;}

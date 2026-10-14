@@ -57,6 +57,7 @@
     <Compile Include="Assets\NexoAvance\Editor\BuildAvance.cs" />
     <Compile Include="Assets\NexoAvance\Editor\WreckSceneBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\MainMenuBuilder.cs" />
+    <Compile Include="Assets\NexoAvance\Editor\EncounterBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\RobotSpriteValidation.cs" />
     <Compile Include="Assets\NexoAvance\Editor\DaylightLevelBuilder.cs" />
     <Compile Include="Assets\NexoAvance\Editor\StreetMissionBuilder.cs" />

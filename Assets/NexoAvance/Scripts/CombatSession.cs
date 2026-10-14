@@ -62,6 +62,7 @@ public class CombatSession : MonoBehaviour {
         player.SetPaused(false); health.ResetHealth(); if(enemy) enemy.ResetEnemy();
         var mission=GetComponent<StreetMission>(); if(mission) mission.ResetCheckpoint();
         var campaign=GetComponent<CampaignMission>(); if(campaign) campaign.ResetCheckpoint();
+        var director=mission?mission.encounters:campaign?campaign.encounters:null; if(director)director.ResetAttempt(player.transform.position.x);
         CombatBullet.ClearAll(); defeatPanel.SetActive(false); UpdateHealth();
     }
     public void BackToMenu() {

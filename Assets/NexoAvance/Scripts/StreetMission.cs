@@ -10,7 +10,7 @@ namespace NexoAvance {
     public GameObject[] waves;
 }
 public class StreetMission : MonoBehaviour {
-    public CombatSession session;
+    public CombatSession session; public EncounterDirector encounters;
     public StreetSector[] sectors;
     public OctopusBoss boss;
     public GameObject bossEntrance,bossHud,victoryPanel;
@@ -33,24 +33,25 @@ public class StreetMission : MonoBehaviour {
         foreach(var sector in sectors){
             if(sector.gate)sector.gate.SetActive(false);
             for(int i=1;i<sector.waves.Length;i++)sector.waves[i].SetActive(false);
-            foreach(var health in sector.waves[0].GetComponentsInChildren<CombatHealth>(true)){enemies.Add(health);health.Died+=EnemyDown;}
+            if(!encounters)foreach(var health in sector.waves[0].GetComponentsInChildren<CombatHealth>(true)){enemies.Add(health);health.Died+=EnemyDown;}
         }
         bossEntrance.SetActive(false);
     }
     public void ShowNotice(string text,float seconds){Notify(text,seconds);}
     void Start(){GrenadeInventory.Install(this);replay.onClick.AddListener(Replay);menu.onClick.AddListener(session.BackToMenu);victoryPanel.SetActive(false);bossHud.SetActive(false);Notify("CALLES BAJO CONTROL",3);}
+    public void RecordReinforcementKill(){EnemyDown();}
     void EnemyDown(){Eliminations++;if(Eliminations==2){weapon.SetMachineGun(true);Notify("METRALLETA OBTENIDA · J PARA DISPARAR RÁFAGAS",3);}}
     void Update(){
         if(Time.timeScale==0 || Complete)return;
         Elapsed+=Time.deltaTime;toast.gameObject.SetActive(Time.time<toastUntil);
         float x=session.player.transform.position.x;
         // Cada patrulla aparece una sola vez. El avance no depende de eliminarla.
-        foreach(var sector in sectors)if(x>=sector.trigger && !sector.waves[0].activeSelf)sector.waves[0].SetActive(true);
+        if(!encounters)foreach(var sector in sectors)if(x>=sector.trigger && !sector.waves[0].activeSelf)sector.waves[0].SetActive(true);
         while(Sector<sectors.Length && x>=sectors[Sector].checkpoint){Sector++;session.health.ResetHealth();session.player.SetSpawn(new Vector3(Checkpoint,-.15f,0));}
         if(!BossStarted && x>=bossTrigger){BossStarted=true;boss.gameObject.SetActive(true);bossHud.SetActive(true);Notify("KRAKEN-01",2);}
         if(BossStarted){bossFill.fillAmount=boss.health.Current/(float)boss.health.maximum;if(!boss.health.Alive){if(victoryAt==0){CombatBullet.ClearAll();victoryAt=Time.time+.85f;}if(Time.time>=victoryAt)Win();}}
     }
-    public bool Cleared(GameObject wave){foreach(var h in wave.GetComponentsInChildren<CombatHealth>(true))if(h.Alive)return false;return true;}
+    public bool Cleared(GameObject wave){if(encounters)return !encounters.HasOutstanding;foreach(var h in wave.GetComponentsInChildren<CombatHealth>(true))if(h.Alive)return false;return true;}
     void Notify(string s,float duration){toast.text=s;toastUntil=Time.time+duration;toast.gameObject.SetActive(true);}
     public void ResetCheckpoint(){
         session.player.GetComponent<GrenadeInventory>()?.ClearThrows();
