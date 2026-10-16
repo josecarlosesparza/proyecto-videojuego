@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace NexoAvance {
 public class AvanceView : MonoBehaviour {
@@ -11,7 +11,10 @@ public class AvanceView : MonoBehaviour {
     GUIStyle title, small, button;
     void LateUpdate() {
         float x = Mathf.Clamp(player.transform.position.x + 3, 8, cameraEnd);
+        var mission=player.GetComponent<PlayerCombat>()?.session.GetComponent<StreetMission>();bool arena=mission&&mission.BossStarted&&!mission.Complete&&Mathf.Abs(player.transform.position.x-mission.boss.transform.position.x)<18;
+        if(arena)x=Mathf.Clamp((player.transform.position.x+mission.boss.transform.position.x)*.5f,179,190);worldCamera.orthographicSize=Mathf.Lerp(worldCamera.orthographicSize,arena?5.9f:5.4f,Time.unscaledDeltaTime*3);
         var p = worldCamera.transform.position;
+        p.y = Mathf.Lerp(p.y,arena?2.62f:2,Time.unscaledDeltaTime*3);
         p.x = Mathf.SmoothDamp(p.x, x, ref cameraVelocity, .18f);
         worldCamera.transform.position = p;
         if (!player.Paused) confirmMenu = false;

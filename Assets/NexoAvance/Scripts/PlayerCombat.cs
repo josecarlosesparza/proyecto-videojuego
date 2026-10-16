@@ -17,7 +17,7 @@ public class PlayerCombat : MonoBehaviour {
     float nextShot,nextBurst;
     int remaining;
     Transform gunVisual;
-    bool CanShoot => health.Alive && movement.enabled;
+    bool CanShoot => health.Alive && movement.enabled && !(GetComponent<PlayerActions>()?.Busy ?? false);
     void Update(){
         if(gunVisual)gunVisual.localPosition=new Vector3(movement.visual.flipX?-.47f:.47f,-.12f,0);
         if(!CanShoot){remaining=0;return;}
@@ -43,6 +43,7 @@ public class PlayerCombat : MonoBehaviour {
     void Emit(){
         float direction=movement.visual.flipX?-1:1;
         var appearance=GetComponent<HeroAppearance>();
+        if(appearance)appearance.Fired();
         Vector2 origin=appearance?appearance.Muzzle:GetComponent<Rigidbody2D>().position+new Vector2(0,-.12f);
         // Do not spawn beyond a wall when the drawn barrel extends outside the shared hitbox.
         Vector2 from=new Vector2(transform.position.x,origin.y);
@@ -52,8 +53,7 @@ public class PlayerCombat : MonoBehaviour {
         }
         LastShotOrigin=origin;
         CombatBullet.Fire(origin,direction,CombatTeam.Player,HasMachineGun?18:damage,HasMachineGun?23:bulletSpeed,pixel,material);
-        if(appearance)appearance.Fired();
-    }
+        }
     public void SetMachineGun(bool value){
         HasMachineGun=value;remaining=0;nextShot=0;
         if(value && !gunVisual && !GetComponent<HeroAppearance>()){var sr=new GameObject("Metralleta del jugador").AddComponent<SpriteRenderer>();gunVisual=sr.transform;gunVisual.SetParent(transform,false);gunVisual.localScale=new Vector3(.6f,.14f,1);sr.sprite=pixel;sr.sharedMaterial=material;sr.sortingOrder=12;sr.color=new Color(.9f,.7f,.3f);}

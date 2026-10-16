@@ -34,6 +34,7 @@ namespace NexoAvance
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             CreateClick();
+            foreach(var label in controls.GetComponentsInChildren<Text>(true))if(label.text.Contains("ESPACIO")){label.fontSize=22;label.text="A / D o flechas: moverte\nESPACIO: saltar; pulsa otra vez para doble salto\nJ: disparar (mantener)\nG: lanzar granada\nK: golpe cuerpo a cuerpo (en el suelo)\nESC: pausa / continuar    R: reiniciar\n\nMENÚ: flechas, Enter y ratón.";}
             playButton.onClick.AddListener(Play);
             controlsButton.onClick.AddListener(() => Show("Controles"));
             optionsButton.onClick.AddListener(() => Show("Opciones"));

@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 namespace NexoAvance {
-public enum StreetEnemyKind { Fusilero, Dron, Blindado, Torreta }
+public enum StreetEnemyKind { Fusilero, Dron, Blindado, Torreta, Cazador, Bombardero, Incinerador, Electrico }
 public class StreetEnemy:MonoBehaviour {
     public StreetEnemyKind kind;public CombatHealth health,target;public SpriteRenderer visual,warning;public Sprite pixel;public Material material;
     public bool AutoFire=true;public Vector3 origin;
@@ -12,6 +12,7 @@ public class StreetEnemy:MonoBehaviour {
     void Awake(){origin=transform.position;hitbox=GetComponent<Collider2D>();pursuit=GetComponent<EnemyPursuit>();health.Died+=Die;}
     void OnEnable(){nextAttack=Time.time+1.2f;charging=false;burst=0;}
     void Update(){
+        var arsenal=GetComponent<RobotArsenal>();if(arsenal&&arsenal.profile){arsenal.Tick();return;}
         if(!health.Alive||!target||!target.Alive||Time.timeScale==0||(pursuit&&pursuit.director&&pursuit.director.Stopped)){warning.enabled=false;charging=false;burst=0;return;}
         float dx=target.transform.position.x-transform.position.x;if(Mathf.Abs(dx)>.3f)visual.flipX=dx<0;
         float range=pursuit&&pursuit.melee?1.45f:attackRange;
@@ -23,7 +24,7 @@ public class StreetEnemy:MonoBehaviour {
         if(charging&&Time.time>=readyAt){charging=false;warning.enabled=false;Shoot();if((kind==StreetEnemyKind.Blindado||kind==StreetEnemyKind.Torreta)&&!(pursuit&&pursuit.melee)){burst=2;burstAt=Time.time+.24f;}nextAttack=Time.time+attackInterval;}
     }
     public bool HasSight(){
-        if(!target)return false;Vector2 a=(Vector2)transform.position+Vector2.down*.12f,b=(Vector2)target.transform.position+Vector2.down*.12f;
+        if(!target)return false;var arsenal=GetComponent<RobotArsenal>();if(arsenal&&arsenal.profile)return arsenal.Sight(arsenal.Muzzle());Vector2 a=(Vector2)transform.position+Vector2.down*.12f,b=(Vector2)target.transform.position+Vector2.down*.12f;
         foreach(var h in Physics2D.RaycastAll(a,(b-a).normalized,(b-a).magnitude+.05f,~0)){
             if(h.collider.isTrigger||h.collider.GetComponentInParent<StreetEnemy>()||h.collider.GetComponent<ThrownGrenade>())continue;
             return h.collider.GetComponentInParent<CombatHealth>()==target;

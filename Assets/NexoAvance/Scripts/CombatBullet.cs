@@ -1,9 +1,11 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 namespace NexoAvance {
 // Barrido del segmento completo: una bala rápida no atraviesa una pared delgada.
 public class CombatBullet : MonoBehaviour {
     public static int ShotsCreated { get; private set; }
+    static readonly Queue<CombatBullet> pool=new Queue<CombatBullet>();
+    public float slowFactor=1,slowDuration;
     CombatTeam team;
     float speed, expires;
     Vector2 direction;
@@ -13,12 +15,12 @@ public class CombatBullet : MonoBehaviour {
         return Fire(origin,Vector2.right*Mathf.Sign(direction),team,damage,speed,pixel,material);
     }
     public static CombatBullet Fire(Vector2 origin, Vector2 direction, CombatTeam team, int damage, float speed, Sprite pixel, Material material) {
-        var go = new GameObject(team == CombatTeam.Player ? "Bala del jugador" : "Bala del robot");
+        CombatBullet reused=null;while(pool.Count>0&&!reused)reused=pool.Dequeue();var go=reused?reused.gameObject:new GameObject(team==CombatTeam.Player?"Bala del jugador":"Bala del robot");
         go.transform.position = origin;
-        var sr = go.AddComponent<SpriteRenderer>(); sr.sprite = pixel; sr.sharedMaterial = material; sr.sortingOrder = 25;
+        var sr = go.GetComponent<SpriteRenderer>();if(!sr)sr=go.AddComponent<SpriteRenderer>(); sr.sprite = pixel; sr.sharedMaterial = material; sr.sortingOrder = 25;
         sr.color = team == CombatTeam.Player ? new Color(.5f,1,.87f) : new Color(1,.35f,.22f);
         go.transform.localScale = new Vector3(.30f,.10f,1);
-        var b = go.AddComponent<CombatBullet>(); b.team = team; b.direction = direction.normalized;
+        var b = reused?reused:go.AddComponent<CombatBullet>();b.slowFactor=1;b.slowDuration=0;go.SetActive(true); b.team = team; b.direction = direction.normalized;
         go.transform.rotation = Quaternion.Euler(0,0,Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg);
         b.damage = damage; b.speed = speed; b.expires = Time.time + 3;
         ShotsCreated++;
@@ -28,18 +30,21 @@ public class CombatBullet : MonoBehaviour {
         if(Time.time >= expires) { Discard(); return; }
         var origin = (Vector2)transform.position;
         float distance = speed * Time.fixedDeltaTime;
-        var filter = new ContactFilter2D(); filter.SetLayerMask(~0); filter.useTriggers = false;
+        var filter = new ContactFilter2D(); filter.SetLayerMask(~0); filter.useTriggers = true;
         Physics2D.Raycast(origin, direction, filter, hits, distance);
         foreach(var hit in hits) {
+            var weak=hit.collider.GetComponent<BossCore>();if(hit.collider.isTrigger&&!weak)continue;
             if(hit.collider.GetComponent<ThrownGrenade>()) continue;
+            if(weak){if(team==CombatTeam.Player&&weak.Vulnerable){weak.Hit(damage,team);Discard();return;}continue;}
+            var boss=hit.collider.GetComponentInParent<OctopusBoss>();if(team==CombatTeam.Player&&boss&&boss.core&&boss.core.InTrajectory(origin,direction))continue;
             var target = hit.collider.GetComponentInParent<CombatHealth>();
             if(target && (target.team == team || !target.Alive)) continue;
-            if(target) target.Hit(damage,team);
+            if(target&&target.Hit(damage,team)&&slowDuration>0){var slow=target.GetComponent<PlayerSlow>();if(!slow)slow=target.gameObject.AddComponent<PlayerSlow>();slow.Apply(slowFactor,slowDuration);}
             Discard(); return;
         }
         transform.position = origin + direction * distance;
     }
-    void Discard() { gameObject.SetActive(false); Destroy(gameObject); }
+    void Discard() { if(!gameObject.activeSelf)return;gameObject.SetActive(false);if(pool.Count<160)pool.Enqueue(this);else Destroy(gameObject); }
     public static void ClearAll() { foreach(var b in FindObjectsByType<CombatBullet>(FindObjectsSortMode.None)) b.Discard(); }
 }
 }

@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dbb01736e5b77e45bce76412952e837, type: 3}
+  m_Name: Electrico
+  m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.RobotProfile
+  displayName: Electrico
+  kind: 7
+  pose: {fileID: 21300000, guid: c80925b33dc65774da716a3acdc0b22f, type: 3}
+  idle:
+  - {fileID: 21300000, guid: 311f76df9efbcdb4a8ae3348589b4489, type: 3}
+  - {fileID: 21300000, guid: 807717730b5f4d442a4464fa73c1a385, type: 3}
+  - {fileID: 21300000, guid: 859fb8b182d92c341b076c0d88fe1b9e, type: 3}
+  - {fileID: 21300000, guid: 90046cb34c714b248a4648cebc763d83, type: 3}
+  - {fileID: 21300000, guid: 5a5480999de6a08458e0556e952e8d9c, type: 3}
+  - {fileID: 21300000, guid: 1dcb6b0574083a148bea98460f88f45d, type: 3}
+  run:
+  - {fileID: 21300000, guid: 311f76df9efbcdb4a8ae3348589b4489, type: 3}
+  - {fileID: 21300000, guid: 807717730b5f4d442a4464fa73c1a385, type: 3}
+  - {fileID: 21300000, guid: 859fb8b182d92c341b076c0d88fe1b9e, type: 3}
+  - {fileID: 21300000, guid: 90046cb34c714b248a4648cebc763d83, type: 3}
+  - {fileID: 21300000, guid: 5a5480999de6a08458e0556e952e8d9c, type: 3}
+  - {fileID: 21300000, guid: 1dcb6b0574083a148bea98460f88f45d, type: 3}
+  jump: []
+  shoot:
+  - {fileID: 21300000, guid: 5f183cc403df41545a900a73b80c29ed, type: 3}
+  hurt:
+  - {fileID: 21300000, guid: bdd570eeed3e24e4eaaa8d80997b04a8, type: 3}
+  death:
+  - {fileID: 21300000, guid: 42b9363359b13e14aaccb5e9f28f84a2, type: 3}
+  - {fileID: 21300000, guid: 2abde6cb10d06d247a3b6175edd49501, type: 3}
+  prepare:
+  - {fileID: 21300000, guid: 788d0b0ab5bcb5942b7f6582f555690b, type: 3}
+  recover:
+  - {fileID: 21300000, guid: b41daba4f9b1e5344b26bc980b61f1c9, type: 3}
+  animationFps: 10
+  spriteMuzzles:
+  - sprite: {fileID: 21300000, guid: 311f76df9efbcdb4a8ae3348589b4489, type: 3}
+    offset: {x: 1.0345507, y: -0.29810393}
+  - sprite: {fileID: 21300000, guid: 807717730b5f4d442a4464fa73c1a385, type: 3}
+    offset: {x: 0.97752815, y: -0.30014044}
+  - sprite: {fileID: 21300000, guid: 859fb8b182d92c341b076c0d88fe1b9e, type: 3}
+    offset: {x: 0.92865175, y: -0.30014044}
+  - sprite: {fileID: 21300000, guid: 90046cb34c714b248a4648cebc763d83, type: 3}
+    offset: {x: 1.0304776, y: -0.30828652}
+  - sprite: {fileID: 21300000, guid: 5a5480999de6a08458e0556e952e8d9c, type: 3}
+    offset: {x: 0.9816012, y: -0.30014044}
+  - sprite: {fileID: 21300000, guid: 1dcb6b0574083a148bea98460f88f45d, type: 3}
+    offset: {x: 0.92865175, y: -0.30421346}
+  - sprite: {fileID: 21300000, guid: 788d0b0ab5bcb5942b7f6582f555690b, type: 3}
+    offset: {x: 0.87239015, y: -0.22857141}
+  - sprite: {fileID: 21300000, guid: 5f183cc403df41545a900a73b80c29ed, type: 3}
+    offset: {x: 0.7887363, y: -0.3440934}
+  - sprite: {fileID: 21300000, guid: b41daba4f9b1e5344b26bc980b61f1c9, type: 3}
+    offset: {x: 0.7489011, y: -0.3480769}
+  - sprite: {fileID: 21300000, guid: bdd570eeed3e24e4eaaa8d80997b04a8, type: 3}
+    offset: {x: 1.1153847, y: 0.09807695}
+  - sprite: {fileID: 21300000, guid: 42b9363359b13e14aaccb5e9f28f84a2, type: 3}
+    offset: {x: 0.91620886, y: -0.12101647}
+  - sprite: {fileID: 21300000, guid: 2abde6cb10d06d247a3b6175edd49501, type: 3}
+    offset: {x: 0.89230776, y: -0.45563188}
+  attack: 5
+  health: 85
+  damage: 12
+  speed: 3.4
+  stopDistance: 4.5
+  range: 12
+  warning: 1
+  cooldown: 2.8
+  projectileSpeed: 6
+  burstCount: 1
+  burstInterval: 0.2
+  muzzleA: {x: 0.67, y: -0.36}
+  muzzleB: {x: 0.67, y: -0.36}
+  blastRadius: 2.2
+  fuse: 0.7
+  flightTime: 1.3
+  fireDuration: 1.5
+  fireTick: 0.5
+  slowFactor: 0.8
+  slowDuration: 1
+  flying: 1
+  heavy: 0
+  hoverHeight: 0.75

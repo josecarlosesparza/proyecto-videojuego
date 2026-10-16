@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -59,7 +59,7 @@ public class CombatSession : MonoBehaviour {
     // Se llama desde Respawn para cubrir R, la pausa y las caídas fuera del nivel.
     public void ResetCombat() {
         player.enabled = true; player.GetComponent<Rigidbody2D>().simulated = true;
-        player.SetPaused(false); health.ResetHealth(); if(enemy) enemy.ResetEnemy();
+        player.GetComponent<PlayerSlow>()?.Clear();HostileHazard.ClearAll();player.SetPaused(false); health.ResetHealth(); if(enemy) enemy.ResetEnemy();
         var mission=GetComponent<StreetMission>(); if(mission) mission.ResetCheckpoint();
         var campaign=GetComponent<CampaignMission>(); if(campaign) campaign.ResetCheckpoint();
         var director=mission?mission.encounters:campaign?campaign.encounters:null; if(director)director.ResetAttempt(player.transform.position.x);

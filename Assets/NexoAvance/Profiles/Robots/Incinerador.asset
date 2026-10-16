@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dbb01736e5b77e45bce76412952e837, type: 3}
+  m_Name: Incinerador
+  m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.RobotProfile
+  displayName: Incinerador
+  kind: 6
+  pose: {fileID: 21300000, guid: 97f4ed0966e600e4ca68d97f24a3066c, type: 3}
+  idle: []
+  run:
+  - {fileID: 21300000, guid: e24bdee14f056d6439c0d29ab56a1b8f, type: 3}
+  - {fileID: 21300000, guid: dd33cdedd5171724c902ff25493016e6, type: 3}
+  - {fileID: 21300000, guid: 542a343cc3f07b94cab3e9ef744f9037, type: 3}
+  - {fileID: 21300000, guid: ae9d3a0d39eae414890e45f5b14c8ccf, type: 3}
+  - {fileID: 21300000, guid: 497e0c0520c9c6f46b8f37eb0d0eeb22, type: 3}
+  - {fileID: 21300000, guid: 4b3af87835e85354bbf6233e4aec6274, type: 3}
+  jump: []
+  shoot:
+  - {fileID: 21300000, guid: 51be4f4475c8fc84bbc80ee0cd657969, type: 3}
+  hurt:
+  - {fileID: 21300000, guid: 97af324f49a7cc9468c60dd536ed5c63, type: 3}
+  death:
+  - {fileID: 21300000, guid: edfddf8f3b8df36419e093baa53a8f59, type: 3}
+  - {fileID: 21300000, guid: 7b65c47457dc8104e86e32200adb5cae, type: 3}
+  prepare:
+  - {fileID: 21300000, guid: a63a41005a10f1f4bb24e1dc1042bf90, type: 3}
+  recover:
+  - {fileID: 21300000, guid: 702ca7d5db01b1642a715a196cbc84fd, type: 3}
+  animationFps: 10
+  spriteMuzzles:
+  - sprite: {fileID: 21300000, guid: e24bdee14f056d6439c0d29ab56a1b8f, type: 3}
+    offset: {x: 1.4296348, y: 0.19620784}
+  - sprite: {fileID: 21300000, guid: dd33cdedd5171724c902ff25493016e6, type: 3}
+    offset: {x: 1.4296348, y: 0.14691009}
+  - sprite: {fileID: 21300000, guid: 542a343cc3f07b94cab3e9ef744f9037, type: 3}
+    offset: {x: 1.369382, y: 0.15786515}
+  - sprite: {fileID: 21300000, guid: ae9d3a0d39eae414890e45f5b14c8ccf, type: 3}
+    offset: {x: 1.4460675, y: 0.17429774}
+  - sprite: {fileID: 21300000, guid: 497e0c0520c9c6f46b8f37eb0d0eeb22, type: 3}
+    offset: {x: 1.5008427, y: 0.1688202}
+  - sprite: {fileID: 21300000, guid: 4b3af87835e85354bbf6233e4aec6274, type: 3}
+    offset: {x: 1.3748596, y: 0.17429774}
+  - sprite: {fileID: 21300000, guid: a63a41005a10f1f4bb24e1dc1042bf90, type: 3}
+    offset: {x: 1.5059406, y: 0.21188116}
+  - sprite: {fileID: 21300000, guid: 51be4f4475c8fc84bbc80ee0cd657969, type: 3}
+    offset: {x: 1.5831683, y: 0.18292075}
+  - sprite: {fileID: 21300000, guid: 702ca7d5db01b1642a715a196cbc84fd, type: 3}
+    offset: {x: 1.1584158, y: 0.22636135}
+  - sprite: {fileID: 21300000, guid: 97af324f49a7cc9468c60dd536ed5c63, type: 3}
+    offset: {x: 1.5686882, y: -0.15736389}
+  - sprite: {fileID: 21300000, guid: edfddf8f3b8df36419e093baa53a8f59, type: 3}
+    offset: {x: 1.2211634, y: -0.36732677}
+  - sprite: {fileID: 21300000, guid: 7b65c47457dc8104e86e32200adb5cae, type: 3}
+    offset: {x: 0.8929455, y: -0.29492578}
+  attack: 4
+  health: 120
+  damage: 5
+  speed: 3.1
+  stopDistance: 1.8
+  range: 3
+  warning: 0.9
+  cooldown: 2.1
+  projectileSpeed: 7
+  burstCount: 1
+  burstInterval: 0.2
+  muzzleA: {x: 1.16, y: 0.1}
+  muzzleB: {x: 1.16, y: 0.1}
+  blastRadius: 2.2
+  fuse: 0.7
+  flightTime: 1.3
+  fireDuration: 1.5
+  fireTick: 0.5
+  slowFactor: 0.8
+  slowDuration: 1
+  flying: 0
+  heavy: 0
+  hoverHeight: 0.75

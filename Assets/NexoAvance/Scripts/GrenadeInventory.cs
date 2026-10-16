@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -38,9 +38,9 @@ public class GrenadeInventory:MonoBehaviour {
 #endif
     }
     public bool TryThrow(){
-        if(Count<=0 || !weapon.health.Alive || !weapon.movement.enabled || weapon.movement.Paused || Time.timeScale==0 || Time.time<nextThrow)return false;
+        if((GetComponent<PlayerActions>()?.Busy ?? false) || Count<=0 || !weapon.health.Alive || !weapon.movement.enabled || weapon.movement.Paused || Time.timeScale==0 || Time.time<nextThrow)return false;
         float side=weapon.movement.visual.flipX?-1:1;
-        ThrownGrenade.Launch(GetComponent<Rigidbody2D>().position+new Vector2(side*.45f,.2f),side,weapon);Count--;nextThrow=Time.time+.65f;Refresh();return true;
+        GetComponent<PlayerActions>()?.GrenadeReleased();var look=GetComponent<HeroAppearance>();if(look)look.RefreshPose();ThrownGrenade.Launch(look?look.Muzzle:GetComponent<Rigidbody2D>().position+new Vector2(side*.45f,.2f),side,weapon);Count--;nextThrow=Time.time+.65f;Refresh();return true;
     }
     public void ResetRun(){ThrownGrenade.ClearAll();Count=0;Collected=false;nextThrow=0;supply.SetActive(truckSupplies);Refresh();}
     public void ClearThrows(){ThrownGrenade.ClearAll();nextThrow=0;}

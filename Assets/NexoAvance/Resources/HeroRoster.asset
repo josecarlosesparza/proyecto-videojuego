@@ -16,40 +16,380 @@ MonoBehaviour:
   - name: Asalto
     pose: {fileID: 21300000, guid: e9d67a6dd0d457c499c7abb1071e853d, type: 3}
     muzzle: {x: 0.61621624, y: 0.33108106}
+    spriteMuzzles:
+    - sprite: {fileID: 21300000, guid: bbb6ed9896eae7f438be31fe29b69d89, type: 3}
+      offset: {x: 1.0530612, y: 0.28061223}
+    - sprite: {fileID: 21300000, guid: 3fa20e2725388ab49a4e5a07fcc2c963, type: 3}
+      offset: {x: 1.0367347, y: 0.29693878}
+    - sprite: {fileID: 21300000, guid: bb2a5accff9845d469651d6445e299ee, type: 3}
+      offset: {x: 0.9632653, y: 0.3132653}
+    - sprite: {fileID: 21300000, guid: 670e1595fdce7784dade0cd603d1eaba, type: 3}
+      offset: {x: 1.0530612, y: 0.19081633}
+    - sprite: {fileID: 21300000, guid: 7bc93ef35868d95429729bcdbe687afc, type: 3}
+      offset: {x: 1.0448979, y: 0.19489796}
+    - sprite: {fileID: 21300000, guid: fd11f51355002334eb1d19677f2dbcf2, type: 3}
+      offset: {x: 0.9959184, y: 0.15408163}
+    - sprite: {fileID: 21300000, guid: ce683d98527b61444bbf455d07836b15, type: 3}
+      offset: {x: 0.922449, y: -0.27040815}
+    - sprite: {fileID: 21300000, guid: 7a738266cab71b04ea683623f3f5cb4a, type: 3}
+      offset: {x: 0.7632653, y: -0.009183673}
+    - sprite: {fileID: 21300000, guid: 77de11131b17e3347b71ea17055fd66f, type: 3}
+      offset: {x: 0.8122449, y: 0.19489796}
+    - sprite: {fileID: 21300000, guid: 87f50dc8a5434454a8d8ae4a53ac95a5, type: 3}
+      offset: {x: 0.81632656, y: -0.22755101}
+    - sprite: {fileID: 21300000, guid: b86820e8b832c5b4893dd308e71d086f, type: 3}
+      offset: {x: 1.155102, y: 0.48469388}
+    - sprite: {fileID: 21300000, guid: 52b4dad90d3d56f4faba814a23be95b2, type: 3}
+      offset: {x: 0.94693875, y: 0.5214286}
+    - sprite: {fileID: 21300000, guid: 6c8fe1af06906684592227e46216e7fb, type: 3}
+      offset: {x: 0.83265305, y: 0.5622449}
+    - sprite: {fileID: 21300000, guid: 05d7d29cf84275d4e8fe266b7f5c4143, type: 3}
+      offset: {x: 0.6979592, y: 0.41530612}
+    - sprite: {fileID: 21300000, guid: 474cbc59598c7b8458a50cd1a2bb73bc, type: 3}
+      offset: {x: 0.91020405, y: 0.7153061}
+    - sprite: {fileID: 21300000, guid: f79fb9f0341dc9541b641d4cce0faad0, type: 3}
+      offset: {x: 0.9346939, y: 0.58265305}
+    - sprite: {fileID: 21300000, guid: b1d776bd68e77924c87346df4f0e0106, type: 3}
+      offset: {x: 0.55918366, y: -0.16836734}
+    - sprite: {fileID: 21300000, guid: 812b11e521420ec40bc6472881c7cecb, type: 3}
+      offset: {x: 0.9265306, y: -0.57244897}
     animations:
-      idle: []
-      run: []
+      idle:
+      - {fileID: 21300000, guid: 6c8fe1af06906684592227e46216e7fb, type: 3}
+      - {fileID: 21300000, guid: 6c8fe1af06906684592227e46216e7fb, type: 3}
+      - {fileID: 21300000, guid: 05d7d29cf84275d4e8fe266b7f5c4143, type: 3}
+      - {fileID: 21300000, guid: 05d7d29cf84275d4e8fe266b7f5c4143, type: 3}
+      run:
+      - {fileID: 21300000, guid: bbb6ed9896eae7f438be31fe29b69d89, type: 3}
+      - {fileID: 21300000, guid: 3fa20e2725388ab49a4e5a07fcc2c963, type: 3}
+      - {fileID: 21300000, guid: bb2a5accff9845d469651d6445e299ee, type: 3}
+      - {fileID: 21300000, guid: 670e1595fdce7784dade0cd603d1eaba, type: 3}
+      - {fileID: 21300000, guid: 7bc93ef35868d95429729bcdbe687afc, type: 3}
+      - {fileID: 21300000, guid: fd11f51355002334eb1d19677f2dbcf2, type: 3}
       jump: []
-      shoot: []
-      hurt: []
-      death: []
+      shoot:
+      - {fileID: 21300000, guid: 474cbc59598c7b8458a50cd1a2bb73bc, type: 3}
+      hurt:
+      - {fileID: 21300000, guid: b1d776bd68e77924c87346df4f0e0106, type: 3}
+      death:
+      - {fileID: 21300000, guid: b1d776bd68e77924c87346df4f0e0106, type: 3}
+      - {fileID: 21300000, guid: 812b11e521420ec40bc6472881c7cecb, type: 3}
+      jumpStart:
+      - {fileID: 21300000, guid: ce683d98527b61444bbf455d07836b15, type: 3}
+      rise:
+      - {fileID: 21300000, guid: 7a738266cab71b04ea683623f3f5cb4a, type: 3}
+      fall:
+      - {fileID: 21300000, guid: 77de11131b17e3347b71ea17055fd66f, type: 3}
+      doubleJump:
+      - {fileID: 21300000, guid: 7a738266cab71b04ea683623f3f5cb4a, type: 3}
+      land:
+      - {fileID: 21300000, guid: ce683d98527b61444bbf455d07836b15, type: 3}
+      shootRun:
+      - {fileID: 21300000, guid: bbb6ed9896eae7f438be31fe29b69d89, type: 3}
+      - {fileID: 21300000, guid: 3fa20e2725388ab49a4e5a07fcc2c963, type: 3}
+      - {fileID: 21300000, guid: bb2a5accff9845d469651d6445e299ee, type: 3}
+      - {fileID: 21300000, guid: 670e1595fdce7784dade0cd603d1eaba, type: 3}
+      - {fileID: 21300000, guid: 7bc93ef35868d95429729bcdbe687afc, type: 3}
+      - {fileID: 21300000, guid: fd11f51355002334eb1d19677f2dbcf2, type: 3}
+      shootAir: []
+      grenade:
+      - {fileID: 21300000, guid: f79fb9f0341dc9541b641d4cce0faad0, type: 3}
+      meleePrepare:
+      - {fileID: 21300000, guid: 87f50dc8a5434454a8d8ae4a53ac95a5, type: 3}
+      meleeImpact:
+      - {fileID: 21300000, guid: b86820e8b832c5b4893dd308e71d086f, type: 3}
+      meleeRecover:
+      - {fileID: 21300000, guid: 52b4dad90d3d56f4faba814a23be95b2, type: 3}
+      runMuzzles:
+      - {x: 1.0530612, y: 0.28061223}
+      - {x: 1.0367347, y: 0.29693878}
+      - {x: 0.9632653, y: 0.3132653}
+      - {x: 1.0530612, y: 0.19081633}
+      - {x: 1.0448979, y: 0.19489796}
+      - {x: 0.9959184, y: 0.15408163}
+      framesPerSecond: 10
   - name: Exploradora
     pose: {fileID: 21300000, guid: e2a070a857cfe88448f482cdf4efe68f, type: 3}
     muzzle: {x: 0.53783786, y: 0.21216214}
+    spriteMuzzles:
+    - sprite: {fileID: 21300000, guid: e1e93158ddc56f74bbb6efe174bd861b, type: 3}
+      offset: {x: 0.9510204, y: 0.3132653}
+    - sprite: {fileID: 21300000, guid: 93348a595683d3f42951a124a3d5bbc0, type: 3}
+      offset: {x: 0.8979592, y: 0.3132653}
+    - sprite: {fileID: 21300000, guid: be8db0e591ae6ba439fb5e51d186c635, type: 3}
+      offset: {x: 0.9755102, y: 0.35}
+    - sprite: {fileID: 21300000, guid: 62aadaf00880c104bada7c5d1e805cb1, type: 3}
+      offset: {x: 1.0040816, y: 0.28469387}
+    - sprite: {fileID: 21300000, guid: 03a3a15fa3ed5b7488db9999936f2bd8, type: 3}
+      offset: {x: 0.922449, y: 0.31530613}
+    - sprite: {fileID: 21300000, guid: b9df30b557740bb4baf7d6e0e6489308, type: 3}
+      offset: {x: 0.9755102, y: 0.33163264}
+    - sprite: {fileID: 21300000, guid: fd80b7b0d4d290948bd1424c4ac54c7d, type: 3}
+      offset: {x: 1.089796, y: -0.35612243}
+    - sprite: {fileID: 21300000, guid: 219a9e7aaa1062741bd78632542b9f47, type: 3}
+      offset: {x: 0.8122449, y: 0.047959182}
+    - sprite: {fileID: 21300000, guid: b7ead9ce0d252d34a9c15f7604939bab, type: 3}
+      offset: {x: 0.75510204, y: 0.33367348}
+    - sprite: {fileID: 21300000, guid: 867f82562aceff9439f46733009b58a3, type: 3}
+      offset: {x: 0.6530612, y: -0.24183674}
+    - sprite: {fileID: 21300000, guid: f5b539523c8a00649a800a44aa8fb19e, type: 3}
+      offset: {x: 1.1224489, y: 0.40714285}
+    - sprite: {fileID: 21300000, guid: 56e94b41055cb3b4d8ea980cad233d92, type: 3}
+      offset: {x: 0.9183673, y: 0.26020408}
+    - sprite: {fileID: 21300000, guid: 4fb39ce1f77309c40946a991bd1f643c, type: 3}
+      offset: {x: 0.97959185, y: 0.5255102}
+    - sprite: {fileID: 21300000, guid: 74df1feba89278a4ab96825ed9202ea3, type: 3}
+      offset: {x: 0.63265306, y: 0.21530612}
+    - sprite: {fileID: 21300000, guid: 26123d2a309ffc446b616b991267e896, type: 3}
+      offset: {x: 0.82040817, y: 0.5744898}
+    - sprite: {fileID: 21300000, guid: 44154dbcdf0b05744a256348560d80e7, type: 3}
+      offset: {x: 1.0285715, y: 0.5581633}
+    - sprite: {fileID: 21300000, guid: f213761efebd5fa409bb286d121d678e, type: 3}
+      offset: {x: 0.49387756, y: -0.0867347}
+    - sprite: {fileID: 21300000, guid: b7b66bbdfaffda04ab7608aa2b0f6701, type: 3}
+      offset: {x: 0.98367345, y: -0.5887755}
     animations:
-      idle: []
-      run: []
+      idle:
+      - {fileID: 21300000, guid: 4fb39ce1f77309c40946a991bd1f643c, type: 3}
+      - {fileID: 21300000, guid: 4fb39ce1f77309c40946a991bd1f643c, type: 3}
+      - {fileID: 21300000, guid: 74df1feba89278a4ab96825ed9202ea3, type: 3}
+      - {fileID: 21300000, guid: 74df1feba89278a4ab96825ed9202ea3, type: 3}
+      run:
+      - {fileID: 21300000, guid: e1e93158ddc56f74bbb6efe174bd861b, type: 3}
+      - {fileID: 21300000, guid: 93348a595683d3f42951a124a3d5bbc0, type: 3}
+      - {fileID: 21300000, guid: be8db0e591ae6ba439fb5e51d186c635, type: 3}
+      - {fileID: 21300000, guid: 62aadaf00880c104bada7c5d1e805cb1, type: 3}
+      - {fileID: 21300000, guid: 03a3a15fa3ed5b7488db9999936f2bd8, type: 3}
+      - {fileID: 21300000, guid: b9df30b557740bb4baf7d6e0e6489308, type: 3}
       jump: []
-      shoot: []
-      hurt: []
-      death: []
+      shoot:
+      - {fileID: 21300000, guid: 26123d2a309ffc446b616b991267e896, type: 3}
+      hurt:
+      - {fileID: 21300000, guid: f213761efebd5fa409bb286d121d678e, type: 3}
+      death:
+      - {fileID: 21300000, guid: f213761efebd5fa409bb286d121d678e, type: 3}
+      - {fileID: 21300000, guid: b7b66bbdfaffda04ab7608aa2b0f6701, type: 3}
+      jumpStart:
+      - {fileID: 21300000, guid: fd80b7b0d4d290948bd1424c4ac54c7d, type: 3}
+      rise:
+      - {fileID: 21300000, guid: 219a9e7aaa1062741bd78632542b9f47, type: 3}
+      fall:
+      - {fileID: 21300000, guid: b7ead9ce0d252d34a9c15f7604939bab, type: 3}
+      doubleJump:
+      - {fileID: 21300000, guid: 219a9e7aaa1062741bd78632542b9f47, type: 3}
+      land:
+      - {fileID: 21300000, guid: fd80b7b0d4d290948bd1424c4ac54c7d, type: 3}
+      shootRun:
+      - {fileID: 21300000, guid: e1e93158ddc56f74bbb6efe174bd861b, type: 3}
+      - {fileID: 21300000, guid: 93348a595683d3f42951a124a3d5bbc0, type: 3}
+      - {fileID: 21300000, guid: be8db0e591ae6ba439fb5e51d186c635, type: 3}
+      - {fileID: 21300000, guid: 62aadaf00880c104bada7c5d1e805cb1, type: 3}
+      - {fileID: 21300000, guid: 03a3a15fa3ed5b7488db9999936f2bd8, type: 3}
+      - {fileID: 21300000, guid: b9df30b557740bb4baf7d6e0e6489308, type: 3}
+      shootAir: []
+      grenade:
+      - {fileID: 21300000, guid: 44154dbcdf0b05744a256348560d80e7, type: 3}
+      meleePrepare:
+      - {fileID: 21300000, guid: 867f82562aceff9439f46733009b58a3, type: 3}
+      meleeImpact:
+      - {fileID: 21300000, guid: f5b539523c8a00649a800a44aa8fb19e, type: 3}
+      meleeRecover:
+      - {fileID: 21300000, guid: 56e94b41055cb3b4d8ea980cad233d92, type: 3}
+      runMuzzles:
+      - {x: 0.9510204, y: 0.3132653}
+      - {x: 0.8979592, y: 0.3132653}
+      - {x: 0.9755102, y: 0.35}
+      - {x: 1.0040816, y: 0.28469387}
+      - {x: 0.922449, y: 0.31530613}
+      - {x: 0.9755102, y: 0.33163264}
+      framesPerSecond: 10
   - name: Artillero
     pose: {fileID: 21300000, guid: d7c2814c8d685a34f9d9bcb3deb3e95a, type: 3}
     muzzle: {x: 0.78918916, y: 0.19594592}
+    spriteMuzzles:
+    - sprite: {fileID: 21300000, guid: 467ef8be098a1ac4ab4db5ac56c1c4e9, type: 3}
+      offset: {x: 1.1877551, y: 0.28469387}
+    - sprite: {fileID: 21300000, guid: 4b0cc3284cc6f2949b6ac3c303fcb5f9, type: 3}
+      offset: {x: 1.0734694, y: 0.30510205}
+    - sprite: {fileID: 21300000, guid: c19b002ecb073854fa53b348615e6fc7, type: 3}
+      offset: {x: 1.0204082, y: 0.32959184}
+    - sprite: {fileID: 21300000, guid: 8bd948954400f1b4483477207ddb6b69, type: 3}
+      offset: {x: 1.1877551, y: 0.29285714}
+    - sprite: {fileID: 21300000, guid: 024364d4098ca1e4d8354770ea6fb1a7, type: 3}
+      offset: {x: 1.0938776, y: 0.3010204}
+    - sprite: {fileID: 21300000, guid: 6f16ffeb773493a45858ef8cff26b0b7, type: 3}
+      offset: {x: 1.0122449, y: 0.3255102}
+    - sprite: {fileID: 21300000, guid: 1c7020fc467196347920f65f95a0fb86, type: 3}
+      offset: {x: 0.9755102, y: -0.2867347}
+    - sprite: {fileID: 21300000, guid: 2a2e97303f19698498261a037a103791, type: 3}
+      offset: {x: 0.89387757, y: 0.14387755}
+    - sprite: {fileID: 21300000, guid: 488abc2e791d6a74bbc0bb444d5f0531, type: 3}
+      offset: {x: 0.9714286, y: 0.17040816}
+    - sprite: {fileID: 21300000, guid: a418ec068b2d150459e3bdafede2c0ab, type: 3}
+      offset: {x: 0.6979592, y: -0.27653062}
+    - sprite: {fileID: 21300000, guid: 426304b5a7b50c244850a4b7d3b840ac, type: 3}
+      offset: {x: 1.1755102, y: 0.2887755}
+    - sprite: {fileID: 21300000, guid: 2e143d8383c739f41bd3b3aeb62c3fca, type: 3}
+      offset: {x: 1, y: 0.36632654}
+    - sprite: {fileID: 21300000, guid: 716532aa22e6eef43ad9839249495528, type: 3}
+      offset: {x: 0.96734697, y: 0.6316326}
+    - sprite: {fileID: 21300000, guid: 5d50faed6686a234bb9f16ec4be8422c, type: 3}
+      offset: {x: 0.8367347, y: 0.019387756}
+    - sprite: {fileID: 21300000, guid: 78477d10298a25a429581ff1f5d95b87, type: 3}
+      offset: {x: 0.96734697, y: 0.64387757}
+    - sprite: {fileID: 21300000, guid: a993c45573d243e43bc40fc712a2375a, type: 3}
+      offset: {x: 0.85714287, y: 0.69693875}
+    - sprite: {fileID: 21300000, guid: 066c4cdd13d426044a76fbba5ad9c9a0, type: 3}
+      offset: {x: 0.8, y: -0.19489796}
+    - sprite: {fileID: 21300000, guid: f3cae631de40a3841b2e99d4c0e84a91, type: 3}
+      offset: {x: 0.9265306, y: -0.58265305}
     animations:
-      idle: []
-      run: []
+      idle:
+      - {fileID: 21300000, guid: 716532aa22e6eef43ad9839249495528, type: 3}
+      - {fileID: 21300000, guid: 716532aa22e6eef43ad9839249495528, type: 3}
+      - {fileID: 21300000, guid: 5d50faed6686a234bb9f16ec4be8422c, type: 3}
+      - {fileID: 21300000, guid: 5d50faed6686a234bb9f16ec4be8422c, type: 3}
+      run:
+      - {fileID: 21300000, guid: 467ef8be098a1ac4ab4db5ac56c1c4e9, type: 3}
+      - {fileID: 21300000, guid: 4b0cc3284cc6f2949b6ac3c303fcb5f9, type: 3}
+      - {fileID: 21300000, guid: c19b002ecb073854fa53b348615e6fc7, type: 3}
+      - {fileID: 21300000, guid: 8bd948954400f1b4483477207ddb6b69, type: 3}
+      - {fileID: 21300000, guid: 024364d4098ca1e4d8354770ea6fb1a7, type: 3}
+      - {fileID: 21300000, guid: 6f16ffeb773493a45858ef8cff26b0b7, type: 3}
       jump: []
-      shoot: []
-      hurt: []
-      death: []
+      shoot:
+      - {fileID: 21300000, guid: 78477d10298a25a429581ff1f5d95b87, type: 3}
+      hurt:
+      - {fileID: 21300000, guid: 066c4cdd13d426044a76fbba5ad9c9a0, type: 3}
+      death:
+      - {fileID: 21300000, guid: 066c4cdd13d426044a76fbba5ad9c9a0, type: 3}
+      - {fileID: 21300000, guid: f3cae631de40a3841b2e99d4c0e84a91, type: 3}
+      jumpStart:
+      - {fileID: 21300000, guid: 1c7020fc467196347920f65f95a0fb86, type: 3}
+      rise:
+      - {fileID: 21300000, guid: 2a2e97303f19698498261a037a103791, type: 3}
+      fall:
+      - {fileID: 21300000, guid: 488abc2e791d6a74bbc0bb444d5f0531, type: 3}
+      doubleJump:
+      - {fileID: 21300000, guid: 2a2e97303f19698498261a037a103791, type: 3}
+      land:
+      - {fileID: 21300000, guid: 1c7020fc467196347920f65f95a0fb86, type: 3}
+      shootRun:
+      - {fileID: 21300000, guid: 467ef8be098a1ac4ab4db5ac56c1c4e9, type: 3}
+      - {fileID: 21300000, guid: 4b0cc3284cc6f2949b6ac3c303fcb5f9, type: 3}
+      - {fileID: 21300000, guid: c19b002ecb073854fa53b348615e6fc7, type: 3}
+      - {fileID: 21300000, guid: 8bd948954400f1b4483477207ddb6b69, type: 3}
+      - {fileID: 21300000, guid: 024364d4098ca1e4d8354770ea6fb1a7, type: 3}
+      - {fileID: 21300000, guid: 6f16ffeb773493a45858ef8cff26b0b7, type: 3}
+      shootAir: []
+      grenade:
+      - {fileID: 21300000, guid: a993c45573d243e43bc40fc712a2375a, type: 3}
+      meleePrepare:
+      - {fileID: 21300000, guid: a418ec068b2d150459e3bdafede2c0ab, type: 3}
+      meleeImpact:
+      - {fileID: 21300000, guid: 426304b5a7b50c244850a4b7d3b840ac, type: 3}
+      meleeRecover:
+      - {fileID: 21300000, guid: 2e143d8383c739f41bd3b3aeb62c3fca, type: 3}
+      runMuzzles:
+      - {x: 1.1877551, y: 0.28469387}
+      - {x: 1.0734694, y: 0.30510205}
+      - {x: 1.0204082, y: 0.32959184}
+      - {x: 1.1877551, y: 0.29285714}
+      - {x: 1.0938776, y: 0.3010204}
+      - {x: 1.0122449, y: 0.3255102}
+      framesPerSecond: 10
   - name: Ingeniera
     pose: {fileID: 21300000, guid: 6b1fe6951c584e441bedda7f8263fc31, type: 3}
     muzzle: {x: 0.54864866, y: 0.2797297}
+    spriteMuzzles:
+    - sprite: {fileID: 21300000, guid: 0e0ee7bb44ec2ae4891ea4d8150a7e5c, type: 3}
+      offset: {x: 1.0448979, y: 0.35408163}
+    - sprite: {fileID: 21300000, guid: a52de8f69991486408395539e10769a2, type: 3}
+      offset: {x: 0.98367345, y: 0.29285714}
+    - sprite: {fileID: 21300000, guid: ab7670790e9f85c4cab0d99025bae951, type: 3}
+      offset: {x: 0.955102, y: 0.3867347}
+    - sprite: {fileID: 21300000, guid: b6c6880ab476a8b468f64b866f3bcbc4, type: 3}
+      offset: {x: 0.9918367, y: 0.31734693}
+    - sprite: {fileID: 21300000, guid: 494e32c3696635841937999c66f10884, type: 3}
+      offset: {x: 1.0367347, y: 0.3091837}
+    - sprite: {fileID: 21300000, guid: cd0c6af5932171e4083ce0ec20b21930, type: 3}
+      offset: {x: 1, y: 0.39489797}
+    - sprite: {fileID: 21300000, guid: b35192256323c3e4dac3a12f2a5a6cb1, type: 3}
+      offset: {x: 0.9265306, y: -0.39285713}
+    - sprite: {fileID: 21300000, guid: e837721ab6b44e14cbe5f588435643ad, type: 3}
+      offset: {x: 0.78367347, y: 0.12142857}
+    - sprite: {fileID: 21300000, guid: 5fa6edd82af04fa439a61761e7e846a1, type: 3}
+      offset: {x: 0.79591835, y: 0.29693878}
+    - sprite: {fileID: 21300000, guid: c472716ccd63b6c41bc019f30b18fcea, type: 3}
+      offset: {x: 0.7714286, y: -0.2744898}
+    - sprite: {fileID: 21300000, guid: f0b7f0452297a864987be9e0573f47d2, type: 3}
+      offset: {x: 1.2571429, y: 0.4234694}
+    - sprite: {fileID: 21300000, guid: 3f2f074da20b7a44595ee7c6b5288cd0, type: 3}
+      offset: {x: 0.90204084, y: 0.13163266}
+    - sprite: {fileID: 21300000, guid: 352b2e52078012445b242bbf40f980ef, type: 3}
+      offset: {x: 0.9346939, y: 0.5989796}
+    - sprite: {fileID: 21300000, guid: 446182f2eca1e02498e0b7a794421775, type: 3}
+      offset: {x: 0.6857143, y: 0.3622449}
+    - sprite: {fileID: 21300000, guid: b1b780b225aba444bbef61038abd5fe9, type: 3}
+      offset: {x: 0.8122449, y: 0.66020405}
+    - sprite: {fileID: 21300000, guid: 53335d849a55a8a459ecee5328aa8170, type: 3}
+      offset: {x: 0.9183673, y: 0.6010204}
+    - sprite: {fileID: 21300000, guid: 0dc6a8d437ecf6f4b9b4a3d7dfbfb2f3, type: 3}
+      offset: {x: 0.5510204, y: -0.13979591}
+    - sprite: {fileID: 21300000, guid: e340b31c311bfb64dae8ecedeff1d5c7, type: 3}
+      offset: {x: 0.877551, y: -0.6336735}
     animations:
-      idle: []
-      run: []
+      idle:
+      - {fileID: 21300000, guid: 352b2e52078012445b242bbf40f980ef, type: 3}
+      - {fileID: 21300000, guid: 352b2e52078012445b242bbf40f980ef, type: 3}
+      - {fileID: 21300000, guid: 446182f2eca1e02498e0b7a794421775, type: 3}
+      - {fileID: 21300000, guid: 446182f2eca1e02498e0b7a794421775, type: 3}
+      run:
+      - {fileID: 21300000, guid: 0e0ee7bb44ec2ae4891ea4d8150a7e5c, type: 3}
+      - {fileID: 21300000, guid: a52de8f69991486408395539e10769a2, type: 3}
+      - {fileID: 21300000, guid: ab7670790e9f85c4cab0d99025bae951, type: 3}
+      - {fileID: 21300000, guid: b6c6880ab476a8b468f64b866f3bcbc4, type: 3}
+      - {fileID: 21300000, guid: 494e32c3696635841937999c66f10884, type: 3}
+      - {fileID: 21300000, guid: cd0c6af5932171e4083ce0ec20b21930, type: 3}
       jump: []
-      shoot: []
-      hurt: []
-      death: []
+      shoot:
+      - {fileID: 21300000, guid: b1b780b225aba444bbef61038abd5fe9, type: 3}
+      hurt:
+      - {fileID: 21300000, guid: 0dc6a8d437ecf6f4b9b4a3d7dfbfb2f3, type: 3}
+      death:
+      - {fileID: 21300000, guid: 0dc6a8d437ecf6f4b9b4a3d7dfbfb2f3, type: 3}
+      - {fileID: 21300000, guid: e340b31c311bfb64dae8ecedeff1d5c7, type: 3}
+      jumpStart:
+      - {fileID: 21300000, guid: b35192256323c3e4dac3a12f2a5a6cb1, type: 3}
+      rise:
+      - {fileID: 21300000, guid: e837721ab6b44e14cbe5f588435643ad, type: 3}
+      fall:
+      - {fileID: 21300000, guid: 5fa6edd82af04fa439a61761e7e846a1, type: 3}
+      doubleJump:
+      - {fileID: 21300000, guid: e837721ab6b44e14cbe5f588435643ad, type: 3}
+      land:
+      - {fileID: 21300000, guid: b35192256323c3e4dac3a12f2a5a6cb1, type: 3}
+      shootRun:
+      - {fileID: 21300000, guid: 0e0ee7bb44ec2ae4891ea4d8150a7e5c, type: 3}
+      - {fileID: 21300000, guid: a52de8f69991486408395539e10769a2, type: 3}
+      - {fileID: 21300000, guid: ab7670790e9f85c4cab0d99025bae951, type: 3}
+      - {fileID: 21300000, guid: b6c6880ab476a8b468f64b866f3bcbc4, type: 3}
+      - {fileID: 21300000, guid: 494e32c3696635841937999c66f10884, type: 3}
+      - {fileID: 21300000, guid: cd0c6af5932171e4083ce0ec20b21930, type: 3}
+      shootAir: []
+      grenade:
+      - {fileID: 21300000, guid: 53335d849a55a8a459ecee5328aa8170, type: 3}
+      meleePrepare:
+      - {fileID: 21300000, guid: c472716ccd63b6c41bc019f30b18fcea, type: 3}
+      meleeImpact:
+      - {fileID: 21300000, guid: f0b7f0452297a864987be9e0573f47d2, type: 3}
+      meleeRecover:
+      - {fileID: 21300000, guid: 3f2f074da20b7a44595ee7c6b5288cd0, type: 3}
+      runMuzzles:
+      - {x: 1.0448979, y: 0.35408163}
+      - {x: 0.98367345, y: 0.29285714}
+      - {x: 0.955102, y: 0.3867347}
+      - {x: 0.9918367, y: 0.31734693}
+      - {x: 1.0367347, y: 0.3091837}
+      - {x: 1, y: 0.39489797}
+      framesPerSecond: 10

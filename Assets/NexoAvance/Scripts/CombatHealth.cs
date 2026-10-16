@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 namespace NexoAvance {
 public enum CombatTeam { Player, Robot }
@@ -15,7 +15,7 @@ public class CombatHealth : MonoBehaviour {
     float flashUntil, immuneUntil;
     Color normalColor=Color.white;
     void Awake() { Current = maximum; if(visual) normalColor=visual.color; }
-    void Update() { if(visual) visual.color = Time.time < flashUntil ? new Color(1,.35f,.3f) : normalColor; }
+    void Update() { if(visual) visual.color = Alive && Time.time < flashUntil ? new Color(1,.35f,.3f) : normalColor; }
     public bool Hit(int damage, CombatTeam source) {
         if(Shielded || !Alive || damage <= 0 || source == team || Time.timeScale == 0 || Time.time < immuneUntil) return false;
         immuneUntil = Time.time + invulnerability;

@@ -18315,9 +18315,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.EncounterDirector
   session: {fileID: 1865745279}
   templates:
-  - {fileID: 2498812938199740016, guid: 6de919727c6476640b68f53ffab36f57, type: 3}
-  - {fileID: 5799465205049418518, guid: abcb4064703d6dc46a1e42fccf800532, type: 3}
-  - {fileID: 978116344154173561, guid: e168d06d8fb7e3e4187bc44c9465971d, type: 3}
+  - {fileID: 8421338696108224009, guid: 01191d8c48bdc674386a536d6a4013c8, type: 3}
+  - {fileID: 6575673252917738440, guid: 90b8cc43815cd2a4a92c03000e082003, type: 3}
+  - {fileID: 4937309898503365490, guid: 5dc85b663e92e784d8e03aab0fda954a, type: 3}
+  - {fileID: 3873693853433915472, guid: 96f1773bcf34c804eba5b9a19c81f5eb, type: 3}
+  - {fileID: 8799000031567403091, guid: cce51540568702f4cabe5f5a47c1c4b4, type: 3}
+  - {fileID: 1710525348906821671, guid: a47fb4082906a884badc191c85d2b892, type: 3}
   encounters:
   - label: Encuentro 1
     triggerX: 4
@@ -18325,58 +18328,61 @@ MonoBehaviour:
     interval: 0.7
     initialDelay: 0.6
     allowRear: 0
-    composition: 000000000000000001000000i
+    composition: 0000000004000000i
   - label: Refuerzo intenso 2
     triggerX: 20
     count: 6
     interval: 0.7
     initialDelay: 0.6
     allowRear: 1
-    composition: 000000000100000003000000i
+    composition: 00000000040000000200000000000000i
   - label: "Reagrupaci\xF3n 3"
     triggerX: 39
     count: 4
     interval: 0.7
     initialDelay: 2.5
     allowRear: 0
-    composition: 000000000100000003000000i
+    composition: 000000000600000000000000i
   - label: Encuentro 4
     triggerX: 54
     count: 7
     interval: 0.7
     initialDelay: 0.6
     allowRear: 0
-    composition: 000000000100000003000000i
+    composition: 00000000070000000400000000000000i
   - label: Refuerzo intenso 5
     triggerX: 72
     count: 6
     interval: 0.7
     initialDelay: 0.6
     allowRear: 1
-    composition: 000000000100000003000000i
+    composition: 040000000000000005000000000000000200000000000000i
   - label: "Reagrupaci\xF3n 6"
     triggerX: 86
     count: 8
     interval: 0.7
     initialDelay: 2.5
     allowRear: 0
-    composition: 000000000100000003000000i
+    composition: 0000000004000000060000000000000007000000000000000400000002000000i
   - label: Encuentro 7
     triggerX: 98
     count: 5
     interval: 0.7
     initialDelay: 0.6
     allowRear: 1
-    composition: 000000000100000003000000i
+    composition: 0400000000000000050000000000000007000000i
   maxActive: 11
   cameraMargin: 1.8
   safePlayerDistance: 8
+  safeRearFallback: 1
   routeLeft: -1
   routeRight: 132
   normalSpeed: 2.8
   heavySpeed: 2.2
   droneSpeed: 3.2
   firingDistance: 4.5
+  maxHeavyActive: 2
+  maxBossSupports: 3
 --- !u!4 &1160799380
 Transform:
   m_ObjectHideFlags: 0
@@ -18973,6 +18979,7 @@ GameObject:
   - component: {fileID: 1214139252}
   - component: {fileID: 1214139253}
   - component: {fileID: 1214139254}
+  - component: {fileID: 1214139255}
   m_Layer: 2
   m_Name: "Jugador \xB7 Resistencia"
   m_TagString: Untagged
@@ -18995,6 +19002,8 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 11
   acceleration: 55
+  doubleJumpSpeed: 10.5
+  allowDoubleJump: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 1
@@ -19142,6 +19151,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.HeroAppearance
   roster: {fileID: 11400000, guid: 5ea3b1e5c4e62484c95616695e1c4b90, type: 2}
+--- !u!114 &1214139255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214139247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1b62107301bb74f83267af041526c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NexoAvance.PlayerActions
+  meleeKey: 107
+  preparation: 0.1
+  impactDuration: 0.08
+  recovery: 0.18
+  cooldown: 0.45
+  meleeSize: {x: 1.2, y: 1.1}
+  meleeOffset: 0.9
+  meleeDamage: 0
 --- !u!1 &1215983315
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 namespace NexoAvance {
@@ -7,7 +7,7 @@ namespace NexoAvance {
     [Range(1,20)]public int count=4;
     [Min(.15f)]public float interval=.8f;
     [Min(0)]public float initialDelay=.5f;
-    public bool allowRear;
+    public bool allowRear;[NonSerialized]public bool support;
     public StreetEnemyKind[] composition;
     [NonSerialized]public bool triggered;[NonSerialized]public int remaining,spawned;[NonSerialized]public float next;
 }
@@ -24,12 +24,19 @@ public class EncounterDirector:MonoBehaviour {
     public EncounterRoutes Routes{get;private set;}
     public readonly List<StreetEnemy> Live=new List<StreetEnemy>();
     public bool SuppressFire {get;set;}
+    public bool Finished{get;private set;}
+    public int maxHeavyActive=2,maxBossSupports=3;
+    readonly List<AdvanceEncounter> supports=new List<AdvanceEncounter>();
+    IEnumerable<AdvanceEncounter> AllZones(){foreach(var z in encounters)yield return z;foreach(var z in supports)yield return z;}
+    public void QueueSupport(int count){if(Finished||supports.Exists(z=>z.remaining>0))return;supports.Add(new AdvanceEncounter{label="Apoyo del calamar",triggered=true,support=true,remaining=Mathf.Clamp(count,1,3),count=count,interval=1.2f,next=Time.time+1,allowRear=true,composition=new[]{StreetEnemyKind.Fusilero,StreetEnemyKind.Cazador}});}
+    public void FinishCombat(){Finished=true;foreach(var z in AllZones())z.remaining=0;foreach(var e in Live)if(e){e.gameObject.SetActive(false);Destroy(e.gameObject);}Live.Clear();}
+
     public int SpawnedTotal{get;private set;}
     public int TriggeredCount{get;private set;}
-    public int Pending {get{int n=0;foreach(var z in encounters)if(z.triggered)n+=z.remaining;return n;}}
+    public int Pending {get{int n=0;foreach(var z in AllZones())if(z.triggered)n+=z.remaining;return n;}}
     public int ActiveCount {get{int n=0;foreach(var e in Live)if(e&&e.health.Alive)n++;return n;}}
     public bool HasOutstanding=>Pending+ActiveCount>0;
-    public bool Stopped=>!session||!session.health.Alive||!session.player.enabled||Time.timeScale==0;
+    public bool Stopped=>Finished||!session||!session.health.Alive||!session.player.enabled||Time.timeScale==0;
     public event Action<StreetEnemy,AdvanceEncounter> Spawned;
     float routeCheck;int serial;StreetMission street;CampaignMission campaign;
     void Awake(){street=session.GetComponent<StreetMission>();campaign=session.GetComponent<CampaignMission>();}
@@ -37,7 +44,7 @@ public class EncounterDirector:MonoBehaviour {
     void Update(){
         if(Stopped)return;
         if(Time.time>=routeCheck){routeCheck=Time.time+1;if(Routes.Changed()){Routes.Build(routeLeft,routeRight);foreach(var e in Live)if(e)e.GetComponent<EnemyPursuit>().Invalidate();}}
-        foreach(var zone in encounters){
+        foreach(var zone in AllZones()){
             if(!zone.triggered&&session.player.transform.position.x>=zone.triggerX){zone.triggered=true;zone.remaining=zone.count;zone.next=Time.time+zone.initialDelay;TriggeredCount++;}
             if(!zone.triggered||zone.remaining<=0||Time.time<zone.next||ActiveCount>=maxActive)continue;
             if(TrySpawn(zone)){zone.remaining--;zone.spawned++;zone.next=Time.time+zone.interval;}else zone.next=Time.time+.4f;
@@ -45,7 +52,7 @@ public class EncounterDirector:MonoBehaviour {
         Live.RemoveAll(e=>!e);
     }
     public void ResetAttempt(float checkpoint){
-        foreach(var e in Live)if(e){e.gameObject.SetActive(false);Destroy(e.gameObject);}Live.Clear();serial=0;SpawnedTotal=TriggeredCount=0;
+        Finished=false;supports.Clear();foreach(var e in Live)if(e){e.gameObject.SetActive(false);Destroy(e.gameObject);}Live.Clear();serial=0;SpawnedTotal=TriggeredCount=0;
         foreach(var z in encounters){z.triggered=z.triggerX<checkpoint-5;z.remaining=z.spawned=0;z.next=0;}
     }
     public bool SpawnPosition(AdvanceEncounter zone,out Vector2 position){
@@ -73,8 +80,10 @@ public class EncounterDirector:MonoBehaviour {
         if(zone.composition==null||zone.composition.Length==0||templates==null)return false;
         if(!SpawnPosition(zone,out var point))return false;
         var kind=zone.composition[zone.spawned%zone.composition.Length];StreetEnemy template=Array.Find(templates,t=>t&&t.kind==kind);if(!template)return false;
+        var profile=template.GetComponent<RobotArsenal>()?.profile;int heavies=0,helpers=0;foreach(var live in Live)if(live&&live.health.Alive){var a=live.GetComponent<RobotArsenal>();if(a&&a.profile.heavy)heavies++;if(a&&a.bossSupport)helpers++;}if(profile&&profile.heavy&&heavies>=maxHeavyActive||zone.support&&helpers>=maxBossSupports)return false;
+        if(profile&&profile.flying){var hover=point+Vector2.up*profile.hoverHeight;if(Routes.Clear(hover))point=hover;else return false;}
         var e=Instantiate(template,point,Quaternion.identity,transform);e.name=kind+" · refuerzo "+(++serial);e.target=session.health;e.origin=point;e.AutoFire=!SuppressFire;
-        var mover=e.GetComponent<EnemyPursuit>();mover.director=this;mover.serial=serial;mover.moveSpeed=kind==StreetEnemyKind.Dron?droneSpeed:kind==StreetEnemyKind.Fusilero?normalSpeed:heavySpeed;mover.attackDistance=firingDistance;
+        var mover=e.GetComponent<EnemyPursuit>();mover.director=this;mover.serial=serial;mover.moveSpeed=kind==StreetEnemyKind.Dron?droneSpeed:kind==StreetEnemyKind.Fusilero?normalSpeed:heavySpeed;mover.attackDistance=firingDistance;var arsenal=e.GetComponent<RobotArsenal>();if(arsenal&&arsenal.profile){mover.moveSpeed=arsenal.profile.speed;mover.attackDistance=arsenal.profile.stopDistance;arsenal.bossSupport=zone.support;}
         Live.Add(e);e.health.Died+=()=>{if(street)street.RecordReinforcementKill();if(campaign)campaign.RecordReinforcementKill();Destroy(e.gameObject,1.2f);};
         e.gameObject.SetActive(true);
         var collider=e.GetComponent<Collider2D>();Physics2D.IgnoreCollision(collider,session.player.GetComponent<Collider2D>());

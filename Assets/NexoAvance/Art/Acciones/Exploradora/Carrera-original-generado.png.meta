@@ -1,0 +1,938 @@
+fileFormatVersion: 2
+guid: b5735d2391fe83545acda00cc21de3dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7447215335385508736
+    second: Carrera-original-generado_0
+  - first:
+      213: 7419389946662475397
+    second: Carrera-original-generado_1
+  - first:
+      213: -6952320611575479325
+    second: Carrera-original-generado_2
+  - first:
+      213: -5631222444170540324
+    second: Carrera-original-generado_3
+  - first:
+      213: -2632140808934109794
+    second: Carrera-original-generado_4
+  - first:
+      213: 3083362350435851519
+    second: Carrera-original-generado_5
+  - first:
+      213: 2322152884692386833
+    second: Carrera-original-generado_6
+  - first:
+      213: -5626587324471374358
+    second: Carrera-original-generado_7
+  - first:
+      213: 8863016528946855014
+    second: Carrera-original-generado_8
+  - first:
+      213: -6846204358283109234
+    second: Carrera-original-generado_9
+  - first:
+      213: -78109062417270801
+    second: Carrera-original-generado_10
+  - first:
+      213: -6895209361431585502
+    second: Carrera-original-generado_11
+  - first:
+      213: -463569256334215558
+    second: Carrera-original-generado_12
+  - first:
+      213: -2899556185018554407
+    second: Carrera-original-generado_13
+  - first:
+      213: 921332421140456753
+    second: Carrera-original-generado_14
+  - first:
+      213: 6192945459894566872
+    second: Carrera-original-generado_15
+  - first:
+      213: -7805817585484389192
+    second: Carrera-original-generado_16
+  - first:
+      213: 456776713188090263
+    second: Carrera-original-generado_17
+  - first:
+      213: -1609739253944017420
+    second: Carrera-original-generado_18
+  - first:
+      213: -1183623041865540990
+    second: Carrera-original-generado_19
+  - first:
+      213: 6770934632105539535
+    second: Carrera-original-generado_20
+  - first:
+      213: 3579905603552822440
+    second: Carrera-original-generado_21
+  - first:
+      213: 6763533369249287653
+    second: Carrera-original-generado_22
+  - first:
+      213: 1675890687755644831
+    second: Carrera-original-generado_23
+  - first:
+      213: 6302238535269614654
+    second: Carrera-original-generado_24
+  - first:
+      213: -467345058420111414
+    second: Carrera-original-generado_25
+  - first:
+      213: 3755166810770780045
+    second: Carrera-original-generado_26
+  - first:
+      213: 2517401965531056708
+    second: Carrera-original-generado_27
+  - first:
+      213: -8365455725174507781
+    second: Carrera-original-generado_28
+  - first:
+      213: -5931665217297807614
+    second: Carrera-original-generado_29
+  - first:
+      213: -4229227542254163772
+    second: Carrera-original-generado_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Carrera-original-generado_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 507
+        width: 531
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08451880c1d26a890800000000000000
+      internalID: -7447215335385508736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_1
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 0
+        width: 565
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586dbecc8d7f6f660800000000000000
+      internalID: 7419389946662475397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_2
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 507
+        width: 486
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3ca6e1d35648f90800000000000000
+      internalID: -6952320611575479325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1014
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda0204c501e9d1b0800000000000000
+      internalID: -5631222444170540324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 845
+        width: 39
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d4ca441e1c87bd0800000000000000
+      internalID: -2632140808934109794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_5
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 953
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffcda8ba8bd4aca20800000000000000
+      internalID: 3083362350435851519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_6
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 980
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1140d3eceb1f93020800000000000000
+      internalID: 2322152884692386833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_7
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 965
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed0b2ba3a85ae1b0800000000000000
+      internalID: -5626587324471374358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 971
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66cfa462392cffa70800000000000000
+      internalID: 8863016528946855014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_9
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 965
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8cddcca8656df0a0800000000000000
+      internalID: -6846204358283109234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_10
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 977
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe731e8b8308aeef0800000000000000
+      internalID: -78109062417270801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_11
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 983
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d1cef3e9b4f40a0800000000000000
+      internalID: -6895209361431585502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_12
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 927
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76386ba7321199f0800000000000000
+      internalID: -463569256334215558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 863
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7aea12305b2c7d0800000000000000
+      internalID: -2899556185018554407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_14
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 885
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135a022a4fa39cc00800000000000000
+      internalID: 921332421140456753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_15
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 892
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8df326a8513c1f550800000000000000
+      internalID: 6192945459894566872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_16
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 855
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4a4b3534a2ca390800000000000000
+      internalID: -7805817585484389192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 14
+        width: 499
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7912f33200cc65600800000000000000
+      internalID: 456776713188090263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_18
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 505
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd1aa36dae09a9e0800000000000000
+      internalID: -1609739253944017420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_19
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 0
+        width: 452
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a13a15d1de29fe0800000000000000
+      internalID: -1183623041865540990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_20
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 433
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc77a088c2137fd50800000000000000
+      internalID: 6770934632105539535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_21
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 355
+        width: 35
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a44235ed216ea130800000000000000
+      internalID: 3579905603552822440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_22
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 401
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5edca9cb3c5ecdd50800000000000000
+      internalID: 6763533369249287653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 335
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f6f0683b5f14710800000000000000
+      internalID: 1675890687755644831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 309
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e340680ae8c067750800000000000000
+      internalID: 6302238535269614654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 305
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7c55d3528a389f0800000000000000
+      internalID: -467345058420111414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_26
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 245
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f245491580d1430800000000000000
+      internalID: 3755166810770780045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_27
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 245
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a4958ffbb9fe220800000000000000
+      internalID: 2517401965531056708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 183
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf637bc075ee7eb80800000000000000
+      internalID: -8365455725174507781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_29
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 181
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2078c6489ed7eada0800000000000000
+      internalID: -5931665217297807614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrera-original-generado_30
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 73
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c864ad25f3ce45c0800000000000000
+      internalID: -4229227542254163772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Carrera-original-generado_0: -7447215335385508736
+      Carrera-original-generado_1: 7419389946662475397
+      Carrera-original-generado_10: -78109062417270801
+      Carrera-original-generado_11: -6895209361431585502
+      Carrera-original-generado_12: -463569256334215558
+      Carrera-original-generado_13: -2899556185018554407
+      Carrera-original-generado_14: 921332421140456753
+      Carrera-original-generado_15: 6192945459894566872
+      Carrera-original-generado_16: -7805817585484389192
+      Carrera-original-generado_17: 456776713188090263
+      Carrera-original-generado_18: -1609739253944017420
+      Carrera-original-generado_19: -1183623041865540990
+      Carrera-original-generado_2: -6952320611575479325
+      Carrera-original-generado_20: 6770934632105539535
+      Carrera-original-generado_21: 3579905603552822440
+      Carrera-original-generado_22: 6763533369249287653
+      Carrera-original-generado_23: 1675890687755644831
+      Carrera-original-generado_24: 6302238535269614654
+      Carrera-original-generado_25: -467345058420111414
+      Carrera-original-generado_26: 3755166810770780045
+      Carrera-original-generado_27: 2517401965531056708
+      Carrera-original-generado_28: -8365455725174507781
+      Carrera-original-generado_29: -5931665217297807614
+      Carrera-original-generado_3: -5631222444170540324
+      Carrera-original-generado_30: -4229227542254163772
+      Carrera-original-generado_4: -2632140808934109794
+      Carrera-original-generado_5: 3083362350435851519
+      Carrera-original-generado_6: 2322152884692386833
+      Carrera-original-generado_7: -5626587324471374358
+      Carrera-original-generado_8: 8863016528946855014
+      Carrera-original-generado_9: -6846204358283109234
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

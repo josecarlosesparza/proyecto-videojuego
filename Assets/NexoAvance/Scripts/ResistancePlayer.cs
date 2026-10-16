@@ -7,6 +7,8 @@ namespace NexoAvance {
 public class ResistancePlayer : MonoBehaviour {
     [Header("Movimiento")]
     public float speed = 6, jumpSpeed = 11, acceleration = 55;
+    [Header("Doble salto")] public float doubleJumpSpeed=10.5f;public bool allowDoubleJump=true;
+    public bool AirJumpUsed{get;private set;} public float DoubleJumpUntil{get;private set;} public float JumpStartUntil{get;private set;} public float LandUntil{get;private set;}
     public LayerMask groundMask = 1;
     [Header("Animaciones")]
     public Sprite[] idle, run;
@@ -27,7 +29,7 @@ public class ResistancePlayer : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<BoxCollider2D>();
         spawn = transform.position;
-        var appearance=GetComponent<HeroAppearance>();if(!appearance)appearance=gameObject.AddComponent<HeroAppearance>();appearance.Initialize(this);
+        var appearance=GetComponent<HeroAppearance>();if(!appearance)appearance=gameObject.AddComponent<HeroAppearance>();appearance.Initialize(this);if(!GetComponent<PlayerActions>())gameObject.AddComponent<PlayerActions>();
     }
     void Update() {
         bool pressJump = false, pause = false, reset = false;
@@ -58,6 +60,7 @@ public class ResistancePlayer : MonoBehaviour {
         jumpBuffer -= Time.deltaTime;
         animationTime += Time.deltaTime;
         if (Mathf.Abs(axis) > .01f) visual.flipX = axis < 0;
+        if(GetComponent<HeroAppearance>())return;
         if (!Grounded) visual.sprite = jump;
         else if (Mathf.Abs(body.linearVelocity.x) > .25f && run.Length > 0)
             visual.sprite = run[(int)(animationTime * 12) % run.Length];
@@ -68,19 +71,21 @@ public class ResistancePlayer : MonoBehaviour {
         filter.SetLayerMask(groundMask);
         filter.useTriggers = false;
         int count = hitbox.Cast(Vector2.down, filter, hits, .07f);
-        Grounded = false;
-        for (int i = 0; i < count; i++) if (hits[i].normal.y > .65f) Grounded = true;
+        bool wasGrounded=Grounded;Grounded = false;
+        for (int i = 0; i < count; i++) if (hits[i].normal.y > .65f && body.linearVelocity.y<=.1f) Grounded = true;
+        if(Grounded){AirJumpUsed=false;if(!wasGrounded)LandUntil=Time.time+.1f;}
         coyoteTime = Grounded ? .10f : coyoteTime - Time.fixedDeltaTime;
         Vector2 v = body.linearVelocity;
-        v.x = Mathf.MoveTowards(v.x, axis * speed, acceleration * Time.fixedDeltaTime);
+        v.x = Mathf.MoveTowards(v.x, axis * speed * (GetComponent<PlayerSlow>()?.Factor ?? 1), acceleration * Time.fixedDeltaTime);
         if (jumpBuffer > 0 && coyoteTime > 0 && v.y <= .1f) {
-            v.y = jumpSpeed; jumpBuffer = 0; coyoteTime = 0; Grounded = false;
+            if(!Grounded)AirJumpUsed=true;v.y = jumpSpeed; jumpBuffer = 0; coyoteTime = 0; Grounded = false;JumpStartUntil=Time.time+.1f;
         }
+        if(jumpBuffer>0&&!Grounded&&coyoteTime<=0&&allowDoubleJump&&!AirJumpUsed){v.y=doubleJumpSpeed;AirJumpUsed=true;jumpBuffer=0;DoubleJumpUntil=Time.time+.2f;ActionPulse.Spawn((Vector2)transform.position+Vector2.down*.8f,GetComponent<PlayerCombat>().material,Color.cyan,.7f,.25f);}
         v.y = Mathf.Max(v.y, -18f);
         body.linearVelocity = v;
     }
     public void SetSpawn(Vector3 point) { spawn=point; }
-    public void Respawn() { transform.position = spawn; body.position = spawn; body.linearVelocity = Vector2.zero; jumpBuffer = coyoteTime = 0; GetComponent<PlayerCombat>()?.ResetEncounter(); }
+    public void Respawn() { transform.position = spawn; body.position = spawn; body.linearVelocity = Vector2.zero; jumpBuffer = coyoteTime = 0;AirJumpUsed=false;DoubleJumpUntil=JumpStartUntil=LandUntil=0;GetComponent<PlayerActions>()?.ResetActions();GetComponent<HeroAppearance>()?.ResetVisual(); GetComponent<PlayerCombat>()?.ResetEncounter(); }
     public void SetPaused(bool value) { Paused = value; Time.timeScale = value ? 0 : 1; jumpBuffer = 0; }
     void OnApplicationFocus(bool focus) { if (!focus && !TestMode) SetPaused(true); }
     void OnDisable() { Time.timeScale = 1; }
